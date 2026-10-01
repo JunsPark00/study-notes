@@ -1,0 +1,250 @@
+[
+  {
+    "number": 1,
+    "title": "최적화 입문",
+    "file": "books/numerical-optimization/chapter01.md",
+    "description": "변수와 제약을 정의하고 새 에너지 구매 모델을 독립 계산으로 검증한다.",
+    "tags": [
+      "모델링",
+      "볼록성",
+      "선형계획",
+      "최적성 검증"
+    ],
+    "category": "무제약 최적화"
+  },
+  {
+    "number": 2,
+    "title": "무제약 최적화의 기초",
+    "file": "books/numerical-optimization/chapter02.md",
+    "description": "정상점의 판정부터 뉴턴 방향과 좌표 스케일링까지 연결한다.",
+    "tags": [
+      "정상점",
+      "헤시안",
+      "뉴턴",
+      "스케일링"
+    ],
+    "category": "무제약 최적화"
+  },
+  {
+    "number": 3,
+    "title": "선 탐색 방법",
+    "file": "books/numerical-optimization/chapter03.md",
+    "description": "충분 감소와 곡률 조건을 분리하고 실패를 드러내는 선 탐색을 만든다.",
+    "tags": [
+      "Armijo",
+      "Wolfe",
+      "수렴 속도",
+      "헤시안 보정"
+    ],
+    "category": "무제약 최적화"
+  },
+  {
+    "number": 4,
+    "title": "신뢰영역 방법",
+    "file": "books/numerical-optimization/chapter04.md",
+    "description": "부분문제의 전역 조건으로 음의 곡률과 어려운 경우를 검증한다.",
+    "tags": [
+      "신뢰영역",
+      "Cauchy",
+      "Dogleg",
+      "음의 곡률"
+    ],
+    "category": "무제약 최적화"
+  },
+  {
+    "number": 5,
+    "title": "켤레기울기 방법",
+    "file": "books/numerical-optimization/chapter05.md",
+    "description": "선형 CG의 기하, 전처리의 효과와 비선형 확장의 한계를 살펴본다.",
+    "tags": [
+      "CG",
+      "전처리",
+      "Krylov",
+      "비선형 CG"
+    ],
+    "category": "무제약 최적화"
+  },
+  {
+    "number": 6,
+    "title": "준뉴턴 방법",
+    "file": "books/numerical-optimization/chapter06.md",
+    "description": "BFGS, SR1과 DFP의 갱신이 기억하는 곡률 정보를 직접 확인한다.",
+    "tags": [
+      "BFGS",
+      "SR1",
+      "Broyden 계열",
+      "Secant"
+    ],
+    "category": "무제약 최적화"
+  },
+  {
+    "number": 7,
+    "title": "대규모 무제약 최적화",
+    "file": "books/numerical-optimization/chapter07.md",
+    "description": "행렬 없는 계산, 부정확 뉴턴, L-BFGS와 구조 활용을 내부 반복 비용으로 이해합니다.",
+    "tags": [
+      "부정확 뉴턴",
+      "사전조건화",
+      "L-BFGS",
+      "희소성"
+    ],
+    "category": "무제약 최적화"
+  },
+  {
+    "number": 8,
+    "title": "미분 계산",
+    "file": "books/numerical-optimization/chapter08.md",
+    "description": "유한차분의 오차 균형과 자동미분의 전진·역방향 모드를 구분하고 독립 검사를 설계합니다.",
+    "tags": [
+      "유한차분",
+      "자동미분",
+      "방향미분",
+      "복소 스텝"
+    ],
+    "category": "무제약 최적화"
+  },
+  {
+    "number": 9,
+    "title": "미분 없는 최적화",
+    "file": "books/numerical-optimization/chapter09.md",
+    "description": "보간 모델, 좌표·패턴 탐색, 켤레방향과 Nelder–Mead를 함수 평가 예산 관점에서 비교합니다.",
+    "tags": [
+      "직접 탐색",
+      "폴링",
+      "보간 모델",
+      "Nelder–Mead"
+    ],
+    "category": "무제약 최적화"
+  },
+  {
+    "number": 10,
+    "title": "최소제곱 문제",
+    "file": "books/numerical-optimization/chapter10.md",
+    "description": "잔차 구조, QR·SVD, Gauss–Newton과 감쇠를 연결하고 모형 오차와 최적화 오차를 구분합니다.",
+    "tags": [
+      "최소제곱",
+      "Gauss–Newton",
+      "Levenberg–Marquardt",
+      "직교 거리 회귀"
+    ],
+    "category": "무제약 최적화"
+  },
+  {
+    "number": 11,
+    "title": "비선형 방정식",
+    "file": "books/numerical-optimization/chapter11.md",
+    "description": "뉴턴과 Broyden, 메리트 기반 전역화, 연속 변형을 잔차의 의미와 함께 설명합니다.",
+    "tags": [
+      "Newton",
+      "Broyden",
+      "메리트 함수",
+      "연속 변형"
+    ],
+    "category": "무제약 최적화"
+  },
+  {
+    "number": 12,
+    "title": "제약 최적화 이론",
+    "file": "books/numerical-optimization/chapter12.md",
+    "description": "c(x)≥0 관례로 제약 자격, KKT, 임계방향, 민감도와 쌍대성을 연결합니다.",
+    "tags": [
+      "KKT",
+      "제약 자격",
+      "이차 조건",
+      "민감도",
+      "쌍대성"
+    ],
+    "category": "제약 최적화"
+  },
+  {
+    "number": 13,
+    "title": "선형계획법: 심플렉스",
+    "file": "books/numerical-optimization/chapter13.md",
+    "description": "기저·감소 비용·쌍대 인증을 새 생산 계획의 직접 피벗으로 연결합니다.",
+    "tags": [
+      "선형계획",
+      "기저",
+      "감소 비용",
+      "쌍대성"
+    ],
+    "category": "제약 최적화"
+  },
+  {
+    "number": 14,
+    "title": "선형계획의 내부점 방법",
+    "file": "books/numerical-optimization/chapter14.md",
+    "description": "불능 시작 원시·쌍대 경로와 양수성, 잔차, 상보성을 함께 확인합니다.",
+    "tags": [
+      "중심 경로",
+      "원시·쌍대",
+      "상보성",
+      "내부점"
+    ],
+    "category": "제약 최적화"
+  },
+  {
+    "number": 15,
+    "title": "비선형 제약 알고리즘의 관점",
+    "file": "books/numerical-optimization/chapter15.md",
+    "description": "활성집합·변수 제거·메리트·필터를 곡률 오차와 연결합니다.",
+    "tags": [
+      "메리트 함수",
+      "필터",
+      "변수 제거",
+      "이차 보정"
+    ],
+    "category": "제약 최적화"
+  },
+  {
+    "number": 16,
+    "title": "이차계획법",
+    "file": "books/numerical-optimization/chapter16.md",
+    "description": "KKT 계와 축약 곡률, 활성집합 변경을 작은 볼록 QP로 검증합니다.",
+    "tags": [
+      "QP",
+      "활성집합",
+      "축약 헤시안",
+      "KKT"
+    ],
+    "category": "제약 최적화"
+  },
+  {
+    "number": 17,
+    "title": "벌점과 증강 라그랑지안",
+    "file": "books/numerical-optimization/chapter17.md",
+    "description": "벌점 정확도와 조건수의 교환, 승수 학습의 이점을 같은 모델에서 비교합니다.",
+    "tags": [
+      "이차 벌점",
+      "정확 벌점",
+      "증강 라그랑지안",
+      "조건수"
+    ],
+    "category": "제약 최적화"
+  },
+  {
+    "number": 18,
+    "title": "순차 이차계획법",
+    "file": "books/numerical-optimization/chapter18.md",
+    "description": "새 쌍곡선 투영 문제에서 라그랑지안 곡률과 KKT 뉴턴 단계를 직접 구성합니다.",
+    "tags": [
+      "SQP",
+      "라그랑지안 헤시안",
+      "선 탐색",
+      "신뢰영역"
+    ],
+    "category": "제약 최적화"
+  },
+  {
+    "number": 19,
+    "title": "비선형계획의 내부점 방법",
+    "file": "books/numerical-optimization/chapter19.md",
+    "description": "타원 위 중심 경로에서 장벽 하위 문제 오차와 원래 경계 해 오차를 분리합니다.",
+    "tags": [
+      "로그 장벽",
+      "비선형 내부점",
+      "완화 상보성",
+      "중심 경로"
+    ],
+    "category": "제약 최적화"
+  }
+]

@@ -1,0 +1,21 @@
+{
+  "chapter": 18,
+  "plot_language": "ko",
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "matplotlib": "3.10.8"
+  },
+  "metrics": {
+    "solution_x": 1.8667603991744217,
+    "solution_y": 0.5356873867914138,
+    "objective": 0.11666949700637282,
+    "solution_error": 5.595524044110789e-13,
+    "constraint_violation": 5.575540029667536e-13,
+    "stationarity": 6.901701432582286e-13,
+    "multiplier": -0.24872641042376897,
+    "slsqp_solution_error": 6.293765508758042e-11,
+    "iterations": 4
+  }
+}

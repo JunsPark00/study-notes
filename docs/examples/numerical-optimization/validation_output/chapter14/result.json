@@ -1,0 +1,20 @@
+{
+  "chapter": 14,
+  "plot_language": "ko",
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "matplotlib": "3.10.8"
+  },
+  "metrics": {
+    "objective": -18.666666666475543,
+    "primal_residual": 0.0,
+    "dual_residual": 8.881784197001252e-16,
+    "mean_complementarity": 9.556165753819322e-11,
+    "duality_gap": 4.77811568089237e-10,
+    "solution_error": 7.644951338647843e-11,
+    "highs_objective_gap": 1.9112178506475175e-10,
+    "iterations": 13
+  }
+}

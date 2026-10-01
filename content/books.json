@@ -21,5 +21,23 @@
     "examplesManifest": "examples/manifest.json",
     "legacyChapterUrls": true,
     "generatedAppendixHeading": "핵심 수식 카드"
+  },
+  {
+    "id": "numerical-optimization",
+    "title": "Numerical Optimization",
+    "subtitle": "한국어 학습 노트",
+    "authors": [
+      "Jorge Nocedal",
+      "Stephen J. Wright"
+    ],
+    "category": "수치 최적화",
+    "description": "최적성 조건에서 선 탐색, 신뢰 영역, 선형·비선형 제약 최적화까지. 알고리즘의 가정을 읽고 작은 독립 계산으로 확인하는 한국어 학습 노트입니다.",
+    "edition": "2nd edition · 2006",
+    "language": "한국어 학습 노트",
+    "officialUrl": "https://users.iems.northwestern.edu/~nocedal/book/",
+    "chaptersFile": "books/numerical-optimization/chapters.json",
+    "attributionFile": "books/numerical-optimization/attribution.md",
+    "diagramsFile": "books/numerical-optimization/diagrams.json",
+    "examplesManifest": "examples/numerical-optimization/manifest.json"
   }
 ]

@@ -1,0 +1,135 @@
+[
+  {
+    "chapter": 1,
+    "id": "numerical-optimization-chapter01",
+    "image": "assets/books/numerical-optimization/chapter01.png",
+    "alt": "충전량과 저녁 구매량의 허용 영역, 수요 경계 위의 비용",
+    "caption": "직접 계산한 보충 실험 · 충전량과 저녁 구매량의 실행 가능 영역, 수요 경계 위 비용의 독립 검산"
+  },
+  {
+    "chapter": 2,
+    "id": "numerical-optimization-chapter02",
+    "image": "assets/books/numerical-optimization/chapter02.png",
+    "alt": "엄격 볼록 이차함수에서 최급강하 경로와 뉴턴 경로, 해 오차의 변화",
+    "caption": "직접 계산한 보충 실험 · 이차함수에서 최급강하와 뉴턴의 경로, 알려진 해까지의 거리"
+  },
+  {
+    "chapter": 3,
+    "id": "numerical-optimization-chapter03",
+    "image": "assets/books/numerical-optimization/chapter03.png",
+    "alt": "함수값 감소 조건과 방향미분의 강한 Wolfe 범위를 비교한 그래프",
+    "caption": "직접 계산한 보충 실험 · Armijo 허용 단계와 강한 Wolfe의 방향미분 범위를 별도로 비교"
+  },
+  {
+    "chapter": 4,
+    "id": "numerical-optimization-chapter04",
+    "image": "assets/books/numerical-optimization/chapter04.png",
+    "alt": "부정 곡률 모델의 신뢰영역 해와 실제 함수의 감소 비교",
+    "caption": "직접 계산한 보충 실험 · 부정 곡률 모델에서 Cauchy 점과 두 전역 해, 실제 함수와 모델의 감소 차이"
+  },
+  {
+    "chapter": 5,
+    "id": "numerical-optimization-chapter05",
+    "image": "assets/books/numerical-optimization/chapter05.png",
+    "alt": "원래 선형계의 상대 잔차와 대칭 전처리 전후의 고유값 분포",
+    "caption": "직접 계산한 보충 실험 · 원래 선형계의 상대 참 잔차 및 Jacobi 대칭 전처리 전후의 고유값 분포"
+  },
+  {
+    "chapter": 6,
+    "id": "numerical-optimization-chapter06",
+    "image": "assets/books/numerical-optimization/chapter06.png",
+    "alt": "BFGS와 최급강하 경로 및 두 번의 곡률 갱신으로 변하는 모델 등고선",
+    "caption": "직접 계산한 보충 실험 · BFGS와 최급강하의 경로, 갱신에 따라 변하는 단위 모델 등고선"
+  },
+  {
+    "chapter": 7,
+    "id": "numerical-optimization-chapter07",
+    "image": "assets/books/numerical-optimization/chapter07.png",
+    "alt": "같은 SPD 이차문제에서 CG와 대각 사전조건화 CG의 상대 잔차 감소",
+    "caption": "직접 계산한 보충 실험 · SPD 이차문제에서 CG와 대각 사전조건화 CG의 상대 잔차 비교"
+  },
+  {
+    "chapter": 8,
+    "id": "numerical-optimization-chapter08",
+    "image": "assets/books/numerical-optimization/chapter08.png",
+    "alt": "전진차분과 중앙차분의 간격별 오차 곡선 및 해석적 함수의 복소 스텝 오차",
+    "caption": "직접 계산한 보충 실험 · 해석적 함수의 전진차분·중앙차분·복소 스텝 오차를 간격별로 비교"
+  },
+  {
+    "chapter": 9,
+    "id": "numerical-optimization-chapter09",
+    "image": "assets/books/numerical-optimization/chapter09.png",
+    "alt": "회전된 이차함수에서 좌표 폴링의 경로와 누적 함수 평가별 목적함수 감소",
+    "caption": "직접 계산한 보충 실험 · 회전된 이차함수의 좌표 폴링 경로와 누적 함수 평가 수"
+  },
+  {
+    "chapter": 10,
+    "id": "numerical-optimization-chapter10",
+    "image": "assets/books/numerical-optimization/chapter10.png",
+    "alt": "지수 감쇠 합성 관측값의 최소제곱 적합과 시간별 최종 잔차",
+    "caption": "직접 계산한 보충 실험 · 지수 감쇠 합성 신호의 비선형 최소제곱 적합과 남아 있는 잔차"
+  },
+  {
+    "chapter": 11,
+    "id": "numerical-optimization-chapter11",
+    "image": "assets/books/numerical-optimization/chapter11.png",
+    "alt": "두 영점 곡선 근방에서 감쇠 Newton과 Broyden의 경로 및 잔차 감소",
+    "caption": "직접 계산한 보충 실험 · 같은 정칙 해로 접근하는 감쇠 Newton과 Broyden의 경로·잔차"
+  },
+  {
+    "chapter": 12,
+    "id": "numerical-optimization-chapter12",
+    "image": "assets/books/numerical-optimization/chapter12.png",
+    "alt": "반공간에 대한 유클리드 투영과 허용 상한 변화에 따른 최적값 및 접선",
+    "caption": "직접 계산한 보충 실험 · 반공간 투영의 KKT 조건과 허용 상한 변화에 대한 최적값 민감도"
+  },
+  {
+    "chapter": 13,
+    "id": "numerical-optimization-chapter13",
+    "image": "assets/books/numerical-optimization/chapter13.png",
+    "alt": "직접 구현한 심플렉스 경로와 목적값",
+    "caption": "직접 계산한 보충 실험 · 새 생산 모델의 심플렉스 꼭짓점 경로와 목적값 감소"
+  },
+  {
+    "chapter": 14,
+    "id": "numerical-optimization-chapter14",
+    "image": "assets/books/numerical-optimization/chapter14.png",
+    "alt": "원시·쌍대 내부점 경로와 잔차 감소",
+    "caption": "직접 계산한 보충 실험 · 같은 LP의 불능 시작 원시·쌍대 경로와 세 종료 지표"
+  },
+  {
+    "chapter": 15,
+    "id": "numerical-optimization-chapter15",
+    "image": "assets/books/numerical-optimization/chapter15.png",
+    "alt": "곡선 위 투영과 접선 이동의 제약 오차",
+    "caption": "직접 계산한 보충 실험 · 포물선 위 투영과 접선 이동의 이차 제약 오차, 보정 효과"
+  },
+  {
+    "chapter": 16,
+    "id": "numerical-optimization-chapter16",
+    "image": "assets/books/numerical-optimization/chapter16.png",
+    "alt": "이차 목적의 등고선과 활성집합 경로 및 승수",
+    "caption": "직접 계산한 보충 실험 · 새 볼록 QP의 활성집합 이동과 원래 부등식의 승수"
+  },
+  {
+    "chapter": 17,
+    "id": "numerical-optimization-chapter17",
+    "image": "assets/books/numerical-optimization/chapter17.png",
+    "alt": "이차 벌점과 절댓값 벌점, 조건수, 증강 라그랑지안 비교",
+    "caption": "직접 계산한 보충 실험 · 결합 등식 모델의 벌점 위반·조건수와 고정 계수 승수 학습"
+  },
+  {
+    "chapter": 18,
+    "id": "numerical-optimization-chapter18",
+    "image": "assets/books/numerical-optimization/chapter18.png",
+    "alt": "직접 구현한 국소 등식 SQP 경로와 KKT 잔차",
+    "caption": "직접 계산한 보충 실험 · 새 양수 쌍곡선 투영 모델의 직접 국소 SQP와 KKT 잔차"
+  },
+  {
+    "chapter": 19,
+    "id": "numerical-optimization-chapter19",
+    "image": "assets/books/numerical-optimization/chapter19.png",
+    "alt": "타원 위 중심 경로와 여유·승수·상보성",
+    "caption": "직접 계산한 보충 실험 · 새 타원 투영 모델의 중심 경로 및 여유·승수·상보성"
+  }
+]

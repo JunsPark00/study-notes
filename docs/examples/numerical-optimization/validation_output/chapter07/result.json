@@ -1,0 +1,10 @@
+{
+  "n": 180,
+  "cg_iterations": 199,
+  "pcg_iterations": 35,
+  "cg_true_relative_residual": 7.988732352486463e-12,
+  "pcg_true_relative_residual": 8.829238714188873e-12,
+  "pcg_relative_solution_error": 1.317170562387552e-10,
+  "dense_hessian_bytes_n100000": 80000000000,
+  "lbfgs_pair_bytes_n100000_m7": 11200000
+}

@@ -1,0 +1,32 @@
+{
+  "initial_slope": -42.5,
+  "directional_curvature": 205.25,
+  "armijo_alpha": 0.25,
+  "armijo_trials": [
+    {
+      "alpha": 1.0,
+      "accepted": false
+    },
+    {
+      "alpha": 0.5,
+      "accepted": false
+    },
+    {
+      "alpha": 0.25,
+      "accepted": true
+    }
+  ],
+  "armijo_step_satisfies_strong_wolfe": false,
+  "strong_wolfe_alpha": 0.20706455542021923,
+  "exact_alpha": 0.20706455542021923,
+  "strong_wolfe_derivative": -1.9984014443252818e-15,
+  "strong_wolfe_conditions_verified": true,
+  "chapter": 3,
+  "seed": 20261001,
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "scipy": "1.17.0",
+  "matplotlib": "3.10.8",
+  "korean_labels": true,
+  "checks_passed": true
+}

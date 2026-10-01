@@ -1,0 +1,21 @@
+{
+  "chapter": 16,
+  "plot_language": "ko",
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "matplotlib": "3.10.8"
+  },
+  "metrics": {
+    "objective": -8.125,
+    "solution_error": 0.0,
+    "primal_violation": 0.0,
+    "stationarity": 0.0,
+    "complementarity": 0.0,
+    "multiplier_error": 0.0,
+    "enumeration_error": 0.0,
+    "slsqp_error": 2.7755575615628914e-17,
+    "working_set_iterations": 5
+  }
+}

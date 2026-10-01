@@ -4,7 +4,12 @@
 
 공개 사이트: https://junspark00.github.io/study-notes/
 
-현재 등록된 책은 Rawlings·Mayne·Diehl의 *Model Predictive Control: Theory, Computation, and Design*, 2판 1쇄(2017)입니다. 8개 장, 직접 제작한 도식 17개, 수식 카드 32개와 독립 실행 Python 예제 8개를 포함합니다.
+현재 두 권, 총 27개 장을 읽을 수 있습니다.
+
+- Rawlings·Mayne·Diehl, *Model Predictive Control: Theory, Computation, and Design*, 2판 1쇄(2017): 8개 장, 직접 제작한 도식 17개, 수식 카드 32개, 독립 Python 예제 8개
+- Nocedal·Wright, *Numerical Optimization*, 2판(2006): 19개 장, 새로 계산한 그래프 19개, 본문의 선택 가능한 수식, 독립 Python 예제 19개
+
+Numerical Optimization의 설명·모델·계산·그림은 별도로 구성한 비공식 학습 자료입니다. [실행 안내](docs/examples/numerical-optimization/README.ko.md)와 [책별 출처](content/books/numerical-optimization/attribution.md)에서 범위와 검증 환경을 확인하세요.
 
 ## 여러 책을 위한 구조
 

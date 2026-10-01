@@ -1,0 +1,20 @@
+{
+  "seed": 2026,
+  "fitted_parameters": [
+    1.700445443448705,
+    0.6351159223411929,
+    0.23750872337844922
+  ],
+  "true_parameters": [
+    1.7,
+    0.65,
+    0.25
+  ],
+  "half_sum_squared_residuals": 0.0034935007468474273,
+  "residual_norm": 0.08358828562481022,
+  "stationarity_inf_norm": 7.139503804032383e-11,
+  "jacobian_check_max_error": 9.723022387220226e-11,
+  "jacobian_condition_number": 9.263486892838904,
+  "function_evaluations": 8,
+  "jacobian_evaluations": 8
+}

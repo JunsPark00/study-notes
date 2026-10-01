@@ -1,0 +1,24 @@
+{
+  "minimizer": [
+    1.0,
+    -0.5
+  ],
+  "initial_gradient": [
+    -3.0,
+    32.0
+  ],
+  "newton_solution_error": 0.0,
+  "steepest_iterations": 23,
+  "steepest_gradient_norm": 6.785859306234754e-11,
+  "original_condition_number": 16.0,
+  "scaled_condition_number": 1.0,
+  "all_objectives_nonincreasing": true,
+  "chapter": 2,
+  "seed": 20261001,
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "scipy": "1.17.0",
+  "matplotlib": "3.10.8",
+  "korean_labels": true,
+  "checks_passed": true
+}

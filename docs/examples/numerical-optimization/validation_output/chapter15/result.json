@@ -1,0 +1,21 @@
+{
+  "chapter": 15,
+  "plot_language": "ko",
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "matplotlib": "3.10.8"
+  },
+  "metrics": {
+    "solution_x": 0.6893983500585402,
+    "solution_y": 0.475270085063437,
+    "objective": 0.07360999808542262,
+    "solution_error": 8.597678124999675e-12,
+    "constraint_violation": 5.551115123125783e-16,
+    "stationarity": 9.932610289808963e-12,
+    "tangent_curvature_error": 1.6653345369377348e-16,
+    "corrected_violation": 2.220446049250313e-16,
+    "iterations": 7
+  }
+}

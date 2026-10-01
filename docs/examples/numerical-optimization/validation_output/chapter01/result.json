@@ -1,0 +1,18 @@
+{
+  "x": [
+    4.0,
+    1.7999999999999998
+  ],
+  "objective": 1.44,
+  "max_constraint_violation": 0.0,
+  "analytic_solution_error_inf": 2.220446049250313e-16,
+  "boundary_cost_slope": -0.14,
+  "chapter": 1,
+  "seed": 20261001,
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "scipy": "1.17.0",
+  "matplotlib": "3.10.8",
+  "korean_labels": true,
+  "checks_passed": true
+}

@@ -1,0 +1,24 @@
+{
+  "chapter": 19,
+  "plot_language": "ko",
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "matplotlib": "3.10.8"
+  },
+  "metrics": {
+    "solution_x": 1.9057666552968504,
+    "solution_y": 0.30333561127385517,
+    "objective": 0.8413439415897075,
+    "final_barrier_parameter": 1e-06,
+    "final_slack": 8.708227805936941e-07,
+    "original_solution_error": 7.656809415390597e-07,
+    "maximum_barrier_stationarity": 4.76647521452378e-09,
+    "maximum_central_path_error": 9.436340597801518e-10,
+    "final_complementarity": 1e-06,
+    "reference_multiplier": 1.1483380049185545,
+    "outer_steps": 19,
+    "newton_steps": 81
+  }
+}

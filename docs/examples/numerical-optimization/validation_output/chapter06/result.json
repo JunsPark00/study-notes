@@ -1,0 +1,33 @@
+{
+  "minimizer": [
+    0.8031088082901555,
+    -1.761658031088083
+  ],
+  "bfgs_iterations": 2,
+  "solution_error": 4.965068306494546e-16,
+  "gradient_norm": 6.280369834735101e-16,
+  "max_inverse_secant_residual": 2.6945789820192466e-16,
+  "minimum_inverse_eigenvalue": 0.298812018141693,
+  "inverse_hessian_error": 2.254873622441467e-16,
+  "worked_bfgs_inverse": [
+    [
+      0.3125,
+      -0.25
+    ],
+    [
+      -0.25,
+      1.0
+    ]
+  ],
+  "bfgs_dfp_matrix_difference": 0.06250000000000001,
+  "sr1_minimum_eigenvalue": -2.083333333333333,
+  "sr1_secant_residual": 0.0,
+  "chapter": 6,
+  "seed": 20261001,
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "scipy": "1.17.0",
+  "matplotlib": "3.10.8",
+  "korean_labels": true,
+  "checks_passed": true
+}

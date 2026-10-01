@@ -1,0 +1,24 @@
+{
+  "small_solution": [
+    5.551115123125783e-17,
+    1.0
+  ],
+  "small_iterations": 2,
+  "small_normalized_conjugacy_error": 3.2769450822864004e-16,
+  "dimension": 60,
+  "plain_iterations": 129,
+  "jacobi_iterations": 16,
+  "plain_relative_true_residual": 3.1391975943018414e-11,
+  "jacobi_relative_true_residual": 3.058923130081419e-11,
+  "jacobi_relative_solution_error": 9.827470412066386e-12,
+  "plain_condition_number": 1379.2487127267532,
+  "preconditioned_condition_number": 2.3303894686107447,
+  "chapter": 5,
+  "seed": 20261001,
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "scipy": "1.17.0",
+  "matplotlib": "3.10.8",
+  "korean_labels": true,
+  "checks_passed": true
+}

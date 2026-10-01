@@ -1,0 +1,9 @@
+{
+  "point": 0.37,
+  "exact_derivative": 2.7817191648884454,
+  "best_forward_error": 1.2343526201163968e-09,
+  "best_forward_h": 1e-08,
+  "best_central_error": 1.1386003251345755e-11,
+  "best_central_h": 1.995262314968883e-06,
+  "complex_step_error_h1e20": 4.440892098500626e-16
+}

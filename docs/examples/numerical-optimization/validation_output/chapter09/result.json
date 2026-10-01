@@ -1,0 +1,12 @@
+{
+  "solution": [
+    -0.2999992370605469,
+    0.5
+  ],
+  "objective": 1.0477378965643862e-12,
+  "solution_error": 7.629394531138978e-07,
+  "function_evaluations": 137,
+  "accepted_moves": 14,
+  "failed_polls": 20,
+  "final_poll_radius": 9.5367431640625e-07
+}

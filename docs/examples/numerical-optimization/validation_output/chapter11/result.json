@@ -1,0 +1,17 @@
+{
+  "newton_iterations": 5,
+  "broyden_iterations": 10,
+  "newton_residual_norm": 2.220446049250313e-16,
+  "broyden_residual_norm": 8.881784197001252e-16,
+  "newton_solution": [
+    -3.755949427440828e-16,
+    1.0000000000000002
+  ],
+  "broyden_solution": [
+    -8.336253977565223e-16,
+    1.0000000000000009
+  ],
+  "maximum_broyden_secant_error": 4.163336342344337e-17,
+  "newton_trial_evaluations": 6,
+  "broyden_trial_evaluations": 12
+}
