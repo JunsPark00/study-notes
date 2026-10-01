@@ -42,7 +42,7 @@ FINAL = '''assert CHECKS and all(v['passed'] for v in CHECKS.values())
 report = {'checks':CHECKS, 'seed':42, 'python':sys.version,
           'versions':{name:importlib.metadata.version(name) for name in
                       ['numpy','scipy','matplotlib','modern-robotics']}}
-(FIG_DIR/'metrics.json').write_text(json.dumps(report, indent=2, allow_nan=False)+'\\n', encoding='utf-8', newline='\n')
+(FIG_DIR/'metrics.json').write_text(json.dumps(report, indent=2, allow_nan=False)+'\\n', encoding='utf-8', newline='\\n')
 print('PASS', len(CHECKS), 'numerical checks')
 '''
 
@@ -59,6 +59,7 @@ def main():
         stems = re.findall(r"save\(fig,'([^']+)'\)", c['code'])
         script = f'chapter{nn}.py'
         code = f'"""Made by Codex: original supplementary Chapter {n} experiment. Not textbook source code."""\n'+SETUP+'\n'+c['code']+'\n\n'+FINAL
+        compile(code, script, 'exec')
         write(EXAMPLES / script, code)
         text = f"# {c['title']}\n\n## 학습 범위와 가정\n\nLynch·Park의 *Modern Robotics* {n}장({c['en']}) 주제와 연결한 직접 작성한 보충 노트입니다. 교재 전체 절의 번역이나 해답집이 아닙니다. 아래 세 개념과 작은 실험에 범위를 한정합니다. 길이는 m, 시간은 s, 각도는 rad이며 열벡터·오른손 좌표계를 사용합니다.\n\n"
         for i, (title, body, _) in enumerate(c['topics']):

@@ -52,6 +52,5 @@ assert CHECKS and all(v['passed'] for v in CHECKS.values())
 report = {'checks':CHECKS, 'seed':42, 'python':sys.version,
           'versions':{name:importlib.metadata.version(name) for name in
                       ['numpy','scipy','matplotlib','modern-robotics']}}
-(FIG_DIR/'metrics.json').write_text(json.dumps(report, indent=2, allow_nan=False)+'\n', encoding='utf-8', newline='
-')
+(FIG_DIR/'metrics.json').write_text(json.dumps(report, indent=2, allow_nan=False)+'\n', encoding='utf-8', newline='\n')
 print('PASS', len(CHECKS), 'numerical checks')
