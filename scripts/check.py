@@ -100,7 +100,7 @@ for b in books:
     for relative in [prefix+'index.html',prefix+'about.html']:
         p=pages.get((DOCS/relative).resolve())
         if not p or p.book!=b['id']:errors.append(f'{relative}: missing or incorrect book context')
-actual_pages={str(file.relative_to(DOCS)) for file in pages}
+actual_pages={file.relative_to(DOCS).as_posix() for file in pages}
 if actual_pages!=expected_pages:errors.append(f'Generated page mismatch: missing {sorted(expected_pages-actual_pages)}, unexpected {sorted(actual_pages-expected_pages)}')
 page_manifest=json.loads((DOCS/'assets/page-manifest.json').read_text())
 if set(page_manifest)!=expected_pages:errors.append('Page manifest does not match registry')

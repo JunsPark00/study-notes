@@ -1,0 +1,158 @@
+[
+  {
+    "number": 1,
+    "title": "로봇 모델의 첫걸음",
+    "file": "books/modern-robotics/chapter01.md",
+    "description": "말단이 같은 두 관절각은 기구학의 다대일 대응을 보여 줍니다. 반경 경계는 관절 제한이 없는 모델에서만 성립합니다.",
+    "tags": [
+      "구성과 작업 공간",
+      "자유도와 작업 차원",
+      "모델의 사용 범위"
+    ],
+    "category": "ROBOTICS"
+  },
+  {
+    "number": 2,
+    "title": "구성 공간과 제약",
+    "file": "books/modern-robotics/chapter02.md",
+    "description": "작업 공간의 작은 원형 장애물도 구성 공간에서는 넓은 금지 영역을 만듭니다. 격자 그림은 연속 공간의 근사 표시이며 경로의 충돌 없음을 증명하지 않습니다.",
+    "tags": [
+      "자유도 계산",
+      "회전 관절의 위상",
+      "구성 공간 장애물"
+    ],
+    "category": "ROBOTICS"
+  },
+  {
+    "number": 3,
+    "title": "강체 운동과 좌표계",
+    "file": "books/modern-robotics/chapter03.md",
+    "description": "두 합성의 점 위치 차이는 비가환성입니다. 역변환 왕복 오차는 부동소수점 허용오차 안에서 0이지만 다른 좌표계 표기를 혼용하면 크게 늘어납니다.",
+    "tags": [
+      "회전 행렬",
+      "동차 변환",
+      "합성과 역변환"
+    ],
+    "category": "ROBOTICS"
+  },
+  {
+    "number": 4,
+    "title": "지수곱 순기구학",
+    "file": "books/modern-robotics/chapter04.md",
+    "description": "직접 계산한 평면 순기구학과 PoE 결과가 일치합니다. 이 검사는 링크 치수와 축 설정이 올바른지 확인하며 실제 제조 로봇의 보정 정확도를 보장하지 않습니다.",
+    "tags": [
+      "홈 자세와 스크류 축",
+      "지수곱 모델",
+      "관절 위치의 표시"
+    ],
+    "category": "ROBOTICS"
+  },
+  {
+    "number": 5,
+    "title": "속도 기구학과 특이점",
+    "file": "books/modern-robotics/chapter05.md",
+    "description": "sin(q2)=0에서 조작성 면적이 0이 됩니다. 평면 작업을 3차원 위치 행렬의 determinant로 평가하면 항상 0이어서 유용한 차이를 놓칩니다.",
+    "tags": [
+      "위치 Jacobian",
+      "공간 트위스트와 점 속도",
+      "특이점과 정역학"
+    ],
+    "category": "ROBOTICS"
+  },
+  {
+    "number": 6,
+    "title": "역기구학과 수렴",
+    "file": "books/modern-robotics/chapter06.md",
+    "description": "해석적 해를 순기구학에 다시 넣은 잔차와 수치해의 최종 잔차를 함께 확인합니다. 이 실습은 위치만 풀며 말단 방향을 추가하면 다른 작업 문제가 됩니다.",
+    "tags": [
+      "해의 개수와 도달 가능성",
+      "Newton 방법",
+      "감쇠와 종료 기준"
+    ],
+    "category": "ROBOTICS"
+  },
+  {
+    "number": 7,
+    "title": "폐사슬의 제약과 운동",
+    "file": "books/modern-robotics/chapter07.md",
+    "description": "다리 길이의 유한차분과 해석 Jacobian이 일치합니다. 최소 특이값은 이 모델의 국소 제약 민감도를 보여 주며 실제 관절 제한·충돌·전역 조립 모드를 포함하지 않습니다.",
+    "tags": [
+      "루프 폐쇄",
+      "병렬 기구의 역기구학",
+      "구속 Jacobian"
+    ],
+    "category": "ROBOTICS"
+  },
+  {
+    "number": 8,
+    "title": "동역학과 에너지",
+    "file": "books/modern-robotics/chapter08.md",
+    "description": "높은 정확도의 적분 결과에서 에너지 변화가 작습니다. Euler 오차는 모델의 에너지 손실이 아니라 수치 적분의 효과이며, 한 링크 결과를 다관절 전체 동역학 검증으로 확대하지 않습니다.",
+    "tags": [
+      "관성 행렬과 운동 에너지",
+      "중력과 운동 방정식",
+      "수치 적분과 에너지 검사"
+    ],
+    "category": "ROBOTICS"
+  },
+  {
+    "number": 9,
+    "title": "경로와 시간 궤적",
+    "file": "books/modern-robotics/chapter09.md",
+    "description": "5차 프로파일의 끝점 속도·가속도가 0임을 수식으로 검사합니다. 사다리꼴 프로파일의 시간축은 단조 증가하며 스위칭 가속도는 불연속입니다.",
+    "tags": [
+      "경로와 시간 분리",
+      "다항식 스케일링",
+      "상수 제한의 최소 시간"
+    ],
+    "category": "ROBOTICS"
+  },
+  {
+    "number": 10,
+    "title": "충돌 없는 경로 계획",
+    "file": "books/modern-robotics/chapter10.md",
+    "description": "출발·목표 사이의 직선은 충돌하지만 격자 그래프의 검증된 변을 따라 우회할 수 있습니다. 로봇 크기를 고려하려면 장애물을 팽창시키거나 실제 로봇 기하를 검사해야 합니다.",
+    "tags": [
+      "연속 경로의 충돌 검사",
+      "그래프 탐색",
+      "표본 기반 계획의 실패"
+    ],
+    "category": "ROBOTICS"
+  },
+  {
+    "number": 11,
+    "title": "로봇 제어와 추종 오차",
+    "file": "books/modern-robotics/chapter11.md",
+    "description": "임계 감쇠의 해석해와 수치 적분을 비교한 뒤 감쇠비를 바꿉니다. 무포화 선형 모델의 결과를 실제 하드웨어의 안정성 보장으로 해석하지 않습니다.",
+    "tags": [
+      "PD 제어",
+      "오차 방정식",
+      "계산 토크의 가정"
+    ],
+    "category": "ROBOTICS"
+  },
+  {
+    "number": 12,
+    "title": "접촉 렌치와 형상 폐쇄",
+    "file": "books/modern-robotics/chapter12.md",
+    "description": "4접촉의 (fy,τ) 투영에는 원점이 있지만 fx 방향이 없어 전체 3D 형상 폐쇄는 실패합니다. 투영만으로 판정할 수 없습니다. 접촉 변형·마찰·고차 효과는 제외합니다.",
+    "tags": [
+      "접촉 힘과 렌치",
+      "일방 접촉과 양의 결합",
+      "엄격한 내부와 경계"
+    ],
+    "category": "ROBOTICS"
+  },
+  {
+    "number": 13,
+    "title": "바퀴 로봇과 비홀로노믹 운동",
+    "file": "books/modern-robotics/chapter13.md",
+    "description": "원호 운동의 Euler 위치 오차는 시간 간격에 비례합니다. ω=0이면 원 반경을 계산하지 않습니다. 위치 오차가 반올림 수준이면 수렴 비율도 정의하지 않습니다. 미끄럼·센서 편향은 제외합니다.",
+    "tags": [
+      "차동 구동",
+      "순간 구속과 이동 가능성",
+      "정확한 적분과 odometry"
+    ],
+    "category": "ROBOTICS"
+  }
+]

@@ -1,0 +1,22 @@
+{
+  "checks": {
+    "energy_conservation": {
+      "value": 9.002543155389731e-10,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    "positive_inertia": {
+      "value": 0.0,
+      "tolerance": 0,
+      "passed": true
+    }
+  },
+  "seed": 42,
+  "python": "3.11.16 (main, Sep 29 2026, 14:58:48) [MSC v.1944 64 bit (AMD64)]",
+  "versions": {
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "matplotlib": "3.11.2",
+    "modern-robotics": "1.1.1"
+  }
+}

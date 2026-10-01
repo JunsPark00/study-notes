@@ -1,0 +1,27 @@
+{
+  "checks": {
+    "rotation_orthogonality": {
+      "value": 3.161250676874014e-16,
+      "tolerance": 1e-12,
+      "passed": true
+    },
+    "proper_rotation": {
+      "value": 0.0,
+      "tolerance": 1e-12,
+      "passed": true
+    },
+    "inverse_roundtrip": {
+      "value": 1.2412670766236366e-16,
+      "tolerance": 1e-12,
+      "passed": true
+    }
+  },
+  "seed": 42,
+  "python": "3.11.16 (main, Sep 29 2026, 14:58:48) [MSC v.1944 64 bit (AMD64)]",
+  "versions": {
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "matplotlib": "3.11.2",
+    "modern-robotics": "1.1.1"
+  }
+}

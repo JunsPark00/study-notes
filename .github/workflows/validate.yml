@@ -1,0 +1,29 @@
+name: Validate public study notes
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  public-materials:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: docs/examples/modern-robotics/requirements.txt
+      - run: npm ci
+      - run: python -m pip install -r docs/examples/modern-robotics/requirements.txt
+      - run: python scripts/build-modern-robotics.py
+      - run: python docs/examples/modern-robotics/validate_all.py
+      - run: npm run build
+      - run: python scripts/check-modern-robotics-provenance.py
+      - run: npm run check
+      - run: npm test

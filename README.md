@@ -4,14 +4,29 @@
 
 공개 사이트: https://junspark00.github.io/study-notes/
 
-현재 두 권, 총 27개 장을 읽을 수 있습니다.
+현재 세 권, 총 40개 장을 읽을 수 있습니다.
 
 - Rawlings·Mayne·Diehl, *Model Predictive Control: Theory, Computation, and Design*, 2판 1쇄(2017): 8개 장, 직접 제작한 도식 17개, 수식 카드 32개, 독립 Python 예제 8개
 - Nocedal·Wright, *Numerical Optimization*, 2판(2006): 19개 장, 새로 계산한 그래프 19개, 본문의 선택 가능한 수식, 독립 Python 예제 19개
 
 Numerical Optimization의 설명·모델·계산·그림은 별도로 구성한 비공식 학습 자료입니다. [실행 안내](docs/examples/numerical-optimization/README.ko.md)와 [책별 출처](content/books/numerical-optimization/attribution.md)에서 범위와 검증 환경을 확인하세요.
 
+- Lynch·Park, *Modern Robotics: Mechanics, Planning, and Control* (2017): 13개 장의 직접 작성한 보충 설명, 독립 Python 실험 13개, 새 계산 그림 26개. 전체 교재 번역이 아닙니다. [실험 안내](docs/examples/modern-robotics/README.ko.md)와 [출처](content/books/modern-robotics/attribution.md)를 확인하세요.
+
 ## 여러 책을 위한 구조
+
+Modern Robotics 공개 자료를 수정할 때는 `content/books/modern-robotics/study-content.json`을 편집하고 다음 순서로 생성·검증합니다. 외부 원본 저장소 없이 재생성할 수 있습니다.
+
+```sh
+python scripts/build-modern-robotics.py
+python docs/examples/modern-robotics/validate_all.py
+npm run build
+python scripts/check-modern-robotics-provenance.py
+npm run check
+npm test
+```
+
+Python 의존성은 해당 예제 폴더의 `requirements.txt`로 설치합니다. 공개 allowlist·파일 해시·검증 한계는 `docs/examples/modern-robotics/provenance.json`에 기록합니다. push/PR 시 같은 검증을 CI에서 실행합니다.
 
 - 홈은 책 카드가 모인 책장입니다
 - `/books/<book-id>/`에는 각 책의 소개와 전체 목차가 있습니다

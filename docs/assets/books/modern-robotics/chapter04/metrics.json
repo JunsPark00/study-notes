@@ -1,0 +1,22 @@
+{
+  "checks": {
+    "poe_vs_trigonometry": {
+      "value": 5.23691153334427e-16,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    "home_pose": {
+      "value": 0.0,
+      "tolerance": 1e-12,
+      "passed": true
+    }
+  },
+  "seed": 42,
+  "python": "3.11.16 (main, Sep 29 2026, 14:58:48) [MSC v.1944 64 bit (AMD64)]",
+  "versions": {
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "matplotlib": "3.11.2",
+    "modern-robotics": "1.1.1"
+  }
+}

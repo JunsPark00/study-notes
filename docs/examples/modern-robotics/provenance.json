@@ -1,0 +1,376 @@
+{
+  "status": "passed",
+  "policy": "Explicit file allowlist. No textbook, scans, archival notes, TeX, slides, notebook, repository history or private links. No blanket legal clearance implied.",
+  "authorship": "Made by Codex; original supplementary educational explanations and examples.",
+  "figures": 26,
+  "chapters": 13,
+  "scanned_text_files": 172,
+  "dependencies": "Imports only; no vendored Modern Robotics implementation. Dependency licenses remain with their projects.",
+  "files": [
+    {
+      "path": "content/books/modern-robotics/attribution.md",
+      "role": "original public educational content/code or derived execution evidence",
+      "sha256": "ad5480b825863e72ef37daf6da4d9eb89ade2372d1ad8d7f9b6222bb82791326"
+    },
+    {
+      "path": "content/books/modern-robotics/chapter01.md",
+      "role": "original public educational content/code or derived execution evidence",
+      "sha256": "3a9eb2d3209c1479602f1da575ad656afb693f5cfef5ab9cb1159f7d038addc0"
+    },
+    {
+      "path": "content/books/modern-robotics/chapter02.md",
+      "role": "original public educational content/code or derived execution evidence",
+      "sha256": "d6a8285dcbb046d9477f48f11faf6282d2060b750b8677a44a5e794e1ab39ba6"
+    },
+    {
+      "path": "content/books/modern-robotics/chapter03.md",
+      "role": "original public educational content/code or derived execution evidence",
+      "sha256": "c9ad0e6d659273fb95a6f231254ceeebb5b6aae1b894d0c0abd6114f09a2dd71"
+    },
+    {
+      "path": "content/books/modern-robotics/chapter04.md",
+      "role": "original public educational content/code or derived execution evidence",
+      "sha256": "fb9c10d70c7a5451680e094448f2065dc96e65b5d391507fd18e777930642b4e"
+    },
+    {
+      "path": "content/books/modern-robotics/chapter05.md",
+      "role": "original public educational content/code or derived execution evidence",
+      "sha256": "d0a3f9303ced6e4e6f71eaf09ec24e8f31d193a0975135ddec6753245da955a7"
+    },
+    {
+      "path": "content/books/modern-robotics/chapter06.md",
+      "role": "original public educational content/code or derived execution evidence",
+      "sha256": "ee00b59bb6d5f0f8f18479c94c3e694e2bfd655965ca4893b20dec2c360709cd"
+    },
+    {
+      "path": "content/books/modern-robotics/chapter07.md",
+      "role": "original public educational content/code or derived execution evidence",
+      "sha256": "f5432c311e76305b07d6e38e4d69a7b59e14227ee06ffcd510b53ddf3de3cae0"
+    },
+    {
+      "path": "content/books/modern-robotics/chapter08.md",
+      "role": "original public educational content/code or derived execution evidence",
+      "sha256": "e088a42d4132b46e6f221642dd4eaff849f2e5c9ffa835c324a5f6fe404125ce"
+    },
+    {
+      "path": "content/books/modern-robotics/chapter09.md",
+      "role": "original public educational content/code or derived execution evidence",
+      "sha256": "f3f974fe0bb441e1706a06a4cf6e9e75ad45f3bbc94b7770acb703dc76a247a9"
+    },
+    {
+      "path": "content/books/modern-robotics/chapter10.md",
+      "role": "original public educational content/code or derived execution evidence",
+      "sha256": "554c0de73eb6b0dfc00cd1d4e6081f5c01c982dec1c7b53e26eb13d0def1e053"
+    },
+    {
+      "path": "content/books/modern-robotics/chapter11.md",
+      "role": "original public educational content/code or derived execution evidence",
+      "sha256": "1e1e78787a9c67ffb83d67534ec05a272bb9d13fd672cfb6764ec57cc6075a60"
+    },
+    {
+      "path": "content/books/modern-robotics/chapter12.md",
+      "role": "original public educational content/code or derived execution evidence",
+      "sha256": "79018fe5f0d65371b806f376abe1e1b38c86565aec0540c504c8679401206c87"
+    },
+    {
+      "path": "content/books/modern-robotics/chapter13.md",
+      "role": "original public educational content/code or derived execution evidence",
+      "sha256": "ca204044e1c89eec3d3165c5c0324da0c558840346e057c56625d814c73d7cc3"
+    },
+    {
+      "path": "content/books/modern-robotics/chapters.json",
+      "role": "original public educational content/code or derived execution evidence",
+      "sha256": "d1481d1e25db213b9dbf23a78cdbb62ad87afe8e36aaa6d686c5d6cf09fb9449"
+    },
+    {
+      "path": "content/books/modern-robotics/study-content.json",
+      "role": "original public educational content/code or derived execution evidence",
+      "sha256": "25e309329b100a6cff9d045027157b28d57350ba88fb8b9292bdb27fa1a354a4"
+    },
+    {
+      "path": "docs/assets/books/modern-robotics/chapter01/metrics.json",
+      "role": "original public educational content/code or derived execution evidence",
+      "sha256": "d2d286b0fd4a8ed055235aa61c47a8ca144e783377eadff34be926acaafdc4c5"
+    },
+    {
+      "path": "docs/assets/books/modern-robotics/chapter01/reach.png",
+      "role": "newly computed figure",
+      "sha256": "0dea25cf65030eb491f39ed34b62c7766c8cf4f8ed72a41446a20e91ded539a2"
+    },
+    {
+      "path": "docs/assets/books/modern-robotics/chapter01/workspace.png",
+      "role": "newly computed figure",
+      "sha256": "966019edde0d781cdae6be1b1c4d3554913090e1cc891e42d827f20fc7265834"
+    },
+    {
+      "path": "docs/assets/books/modern-robotics/chapter02/cspace.png",
+      "role": "newly computed figure",
+      "sha256": "3590c56cdf16349f979dd9bcb227de7e4e065f9df457db756adc441f4e13f6e7"
+    },
+    {
+      "path": "docs/assets/books/modern-robotics/chapter02/metrics.json",
+      "role": "original public educational content/code or derived execution evidence",
+      "sha256": "3fae07ca3ea33c2e36bfbea1961d8c1d7f94e1c3a859958e0d895bbc128862f9"
+    },
+    {
+      "path": "docs/assets/books/modern-robotics/chapter02/mobility.png",
+      "role": "newly computed figure",
+      "sha256": "613e873aa1be8fe3be92afb13510cdcc888dc163feffe9f3f23bb306cdbeeb2c"
+    },
+    {
+      "path": "docs/assets/books/modern-robotics/chapter03/composition.png",
+      "role": "newly computed figure",
+      "sha256": "f280dc3d622677fd55eef4d16a6867f69ba80278edd0e821a6a1048efc2bc71e"
+    },
+    {
+      "path": "docs/assets/books/modern-robotics/chapter03/metrics.json",
+      "role": "original public educational content/code or derived execution evidence",
+      "sha256": "7df05044ff3ec021aa0cb03dcb97fed7ddf60cbed0bbb47aa110ddf7d4649da1"
+    },
+    {
+      "path": "docs/assets/books/modern-robotics/chapter03/order.png",
+      "role": "newly computed figure",
+      "sha256": "cde3f6225f063c62732b3893d7ea6b7ae682ef7393c0342c79d7fd81a9a19d24"
+    },
+    {
+      "path": "docs/assets/books/modern-robotics/chapter04/fk_residual.png",
+      "role": "newly computed figure",
+      "sha256": "be206d0ae8ec85a4dec5079d6cfc6848b7c1e5ad931a22715c037019ccf7e23e"
+    },
+    {
+      "path": "docs/assets/books/modern-robotics/chapter04/metrics.json",
+      "role": "original public educational content/code or derived execution evidence",
+      "sha256": "3e2b0b946c7b346e1e7abbd51cf453d972d5c090b68e87686dccc227a8a30245"
+    },
+    {
+      "path": "docs/assets/books/modern-robotics/chapter04/poe.png",
+      "role": "newly computed figure",
+      "sha256": "de4783cc69543385840fd8a07ba29f4fa53f73c431389c29f7059d6d22eea0a8"
+    },
+    {
+      "path": "docs/assets/books/modern-robotics/chapter05/manipulability.png",
+      "role": "newly computed figure",
+      "sha256": "c364e4c3301cc6c3344072fa1ea3993b5fdfcdf38264bcd745d44dd42e769baa"
+    },
+    {
+      "path": "docs/assets/books/modern-robotics/chapter05/metrics.json",
+      "role": "original public educational content/code or derived execution evidence",
+      "sha256": "1c9df38431402a639445da14b61337e1cb7a84a6f875f7e4e483d0d8c55439ce"
+    },
+    {
+      "path": "docs/assets/books/modern-robotics/chapter05/velocity_ellipse.png",
+      "role": "newly computed figure",
+      "sha256": "b0114483e1f297f7d7e4eced457914f66707eeae0dc22574f038fa42bfc57937"
+    },
+    {
+      "path": "docs/assets/books/modern-robotics/chapter06/ik_convergence.png",
+      "role": "newly computed figure",
+      "sha256": "a26689b31bdb1486663b33500f74cd8900eb146e79d65284b3aa32c91238845d"
+    },
+    {
+      "path": "docs/assets/books/modern-robotics/chapter06/ik_path.png",
+      "role": "newly computed figure",
+      "sha256": "13d539690233ade13c6211f7b9fe19d6a103f322242ac83cda0b2fe049f38c15"
+    },
+    {
+      "path": "docs/assets/books/modern-robotics/chapter06/metrics.json",
+      "role": "original public educational content/code or derived execution evidence",
+      "sha256": "f834c0f6fb128fa634c0d392dcf60b94a23ef48e8aba1a732dd04545d02fbed9"
+    },
+    {
+      "path": "docs/assets/books/modern-robotics/chapter07/constraint_rank.png",
+      "role": "newly computed figure",
+      "sha256": "d56453e937820bf489189e55ed8dbc62cdc4968d210981c8a7c10ca5ea1f1f23"
+    },
+    {
+      "path": "docs/assets/books/modern-robotics/chapter07/metrics.json",
+      "role": "original public educational content/code or derived execution evidence",
+      "sha256": "d46c428451dcb827cc46ff4c58fdbe8563ccd804ed226fa22469bd2c8090b277"
+    },
+    {
+      "path": "docs/assets/books/modern-robotics/chapter07/parallel_geometry.png",
+      "role": "newly computed figure",
+      "sha256": "b977bcd19b487acd111c4868dc8f478df0cbc98fb89eb3393de4dc4ade4ec771"
+    },
+    {
+      "path": "docs/assets/books/modern-robotics/chapter08/dynamics.png",
+      "role": "newly computed figure",
+      "sha256": "c990d6e9a0d9c33d44d3761998feeacffac1c6b97390c5d38d1d13eff7461ee9"
+    },
+    {
+      "path": "docs/assets/books/modern-robotics/chapter08/energy.png",
+      "role": "newly computed figure",
+      "sha256": "a8d14b365f9aaa1d31deb5c58deab5ddbea79d4f782d36f01cd80ec87f54f349"
+    },
+    {
+      "path": "docs/assets/books/modern-robotics/chapter08/metrics.json",
+      "role": "original public educational content/code or derived execution evidence",
+      "sha256": "33ac8faef5e5ecabe141c6a00fa6fe18109615a5892f906559919f18b2eb7794"
+    },
+    {
+      "path": "docs/assets/books/modern-robotics/chapter09/metrics.json",
+      "role": "original public educational content/code or derived execution evidence",
+      "sha256": "3961f141318ff23ba639152a24fb6906174c5ddbe02d218e1541cc46319ca849"
+    },
+    {
+      "path": "docs/assets/books/modern-robotics/chapter09/speed_profile.png",
+      "role": "newly computed figure",
+      "sha256": "2bd32c15df0082cb0f3ee27956d2ea02a51463097ae014b5edec176d066bd0e0"
+    },
+    {
+      "path": "docs/assets/books/modern-robotics/chapter09/time_scaling.png",
+      "role": "newly computed figure",
+      "sha256": "50f9aab14f5fe9c900c4b233c286d50221962a6fb66b2a16b479225fe98b150d"
+    },
+    {
+      "path": "docs/assets/books/modern-robotics/chapter10/metrics.json",
+      "role": "original public educational content/code or derived execution evidence",
+      "sha256": "f7eed795fc0b32c2d984d34247062d416c275e894b5a2d20d1ba084fe687d4ae"
+    },
+    {
+      "path": "docs/assets/books/modern-robotics/chapter10/path_cost.png",
+      "role": "newly computed figure",
+      "sha256": "34ab56a4027bbb6db21ef3cd59b1ff3dcd16ea04bb043c3f857c8675fef10bac"
+    },
+    {
+      "path": "docs/assets/books/modern-robotics/chapter10/planning.png",
+      "role": "newly computed figure",
+      "sha256": "3e9f590bcf6a587fecc4ddec20632a1a3e621f0bf01ed952d730c16380c68fbc"
+    },
+    {
+      "path": "docs/assets/books/modern-robotics/chapter11/control_response.png",
+      "role": "newly computed figure",
+      "sha256": "c2cf2df6c1cec91ba908f32bad44edb165adc85fa23bc923de3c7d331f2ec37f"
+    },
+    {
+      "path": "docs/assets/books/modern-robotics/chapter11/metrics.json",
+      "role": "original public educational content/code or derived execution evidence",
+      "sha256": "6ffd4c0cab263439b137446cacfce9cae343efebaf142b5d6f6eefb8dffcb8a2"
+    },
+    {
+      "path": "docs/assets/books/modern-robotics/chapter11/overshoot.png",
+      "role": "newly computed figure",
+      "sha256": "b86399b5eed55086a8accf51e5faa9f671585d95117fc8d4cb5db501914446e8"
+    },
+    {
+      "path": "docs/assets/books/modern-robotics/chapter12/contacts.png",
+      "role": "newly computed figure",
+      "sha256": "d477be91a3cc94754c2c50de41cab375ddabd3aba2b1a1a68b4ded02afaa0524"
+    },
+    {
+      "path": "docs/assets/books/modern-robotics/chapter12/metrics.json",
+      "role": "original public educational content/code or derived execution evidence",
+      "sha256": "bbf2973de9f7343aa1140c2934cb30461e702c6a853500cf15bfaa1532c5f8f0"
+    },
+    {
+      "path": "docs/assets/books/modern-robotics/chapter12/wrench_hull.png",
+      "role": "newly computed figure",
+      "sha256": "2431cd6f3195fc59ada1869190f8fc4c4858bc8bbd4164ef12716d3f684531c0"
+    },
+    {
+      "path": "docs/assets/books/modern-robotics/chapter13/integration_error.png",
+      "role": "newly computed figure",
+      "sha256": "3c0dff8d9ecfc0d36ce9f232d0c0dca920e4a8ef112ed28e26933ccb7af1213e"
+    },
+    {
+      "path": "docs/assets/books/modern-robotics/chapter13/metrics.json",
+      "role": "original public educational content/code or derived execution evidence",
+      "sha256": "521732fca4875fc2b609048f5fb176c98eba7801c21d4e943cb782aa809e6945"
+    },
+    {
+      "path": "docs/assets/books/modern-robotics/chapter13/odometry.png",
+      "role": "newly computed figure",
+      "sha256": "274955648d1b9935d1a2faf57bbc637de223c0f633c72ad5905db96bb6d963a5"
+    },
+    {
+      "path": "docs/examples/modern-robotics/chapter01.py",
+      "role": "original public educational content/code or derived execution evidence",
+      "sha256": "53556e876f30243b8d5cd56a32c2c8248dd8821dc858394b21e04954baa2c169"
+    },
+    {
+      "path": "docs/examples/modern-robotics/chapter02.py",
+      "role": "original public educational content/code or derived execution evidence",
+      "sha256": "49811f03670deec6a30dbcba1e2b4212bf97cdd6d8028633efe4e0f033cc786a"
+    },
+    {
+      "path": "docs/examples/modern-robotics/chapter03.py",
+      "role": "original public educational content/code or derived execution evidence",
+      "sha256": "2372e5d639940b6d2f638db6297fffae0bca81edce391aa2ef0ea5f76b9b9ce9"
+    },
+    {
+      "path": "docs/examples/modern-robotics/chapter04.py",
+      "role": "original public educational content/code or derived execution evidence",
+      "sha256": "b1fce1e071662304a92084f89d5b9b849c2d22436f9e88b384ca0b6c0042890d"
+    },
+    {
+      "path": "docs/examples/modern-robotics/chapter05.py",
+      "role": "original public educational content/code or derived execution evidence",
+      "sha256": "0d4f67044df37850bacc55ef8500ea71c7427ffaa5ee53c093eef8371ac9d49c"
+    },
+    {
+      "path": "docs/examples/modern-robotics/chapter06.py",
+      "role": "original public educational content/code or derived execution evidence",
+      "sha256": "3c667980ed373cd9031b13ec475a722ae6850f822c5350aeb7e60d25086790e1"
+    },
+    {
+      "path": "docs/examples/modern-robotics/chapter07.py",
+      "role": "original public educational content/code or derived execution evidence",
+      "sha256": "caf234945a0320d7a5a38d8c373d9758f4e4da864a060504181c0d4341a0cc2b"
+    },
+    {
+      "path": "docs/examples/modern-robotics/chapter08.py",
+      "role": "original public educational content/code or derived execution evidence",
+      "sha256": "ac232e1d492b6247e9bea3ebd97d7d6cb9cdcbd819f5f0c7031e06945aac89d8"
+    },
+    {
+      "path": "docs/examples/modern-robotics/chapter09.py",
+      "role": "original public educational content/code or derived execution evidence",
+      "sha256": "21c06462c922c89dfc0eac3de58fb790d6d94cf8dbc9f028391fb27aec786b05"
+    },
+    {
+      "path": "docs/examples/modern-robotics/chapter10.py",
+      "role": "original public educational content/code or derived execution evidence",
+      "sha256": "6e82e89b94617ac531dae51826952a1c7e4ab3bcf2f8a3bcf94f82174aff2a3e"
+    },
+    {
+      "path": "docs/examples/modern-robotics/chapter11.py",
+      "role": "original public educational content/code or derived execution evidence",
+      "sha256": "204073d97ca37e18b941fec514d145094ea5b8229dbc2f473d8f2d9024161cee"
+    },
+    {
+      "path": "docs/examples/modern-robotics/chapter12.py",
+      "role": "original public educational content/code or derived execution evidence",
+      "sha256": "962e3431eafccf76ac3327865309a7026d372fd45a48bcd9d75234379988881c"
+    },
+    {
+      "path": "docs/examples/modern-robotics/chapter13.py",
+      "role": "original public educational content/code or derived execution evidence",
+      "sha256": "9dddbfd5f75f95c9b59a56ed3fa5867972d017a098691d6df13341ba44bad6e3"
+    },
+    {
+      "path": "docs/examples/modern-robotics/manifest.json",
+      "role": "original public educational content/code or derived execution evidence",
+      "sha256": "6cab39ebe5db612d74be353b9e6f294d3e06ed6677f17d6275fc59bc7ceaa47f"
+    },
+    {
+      "path": "docs/examples/modern-robotics/README.ko.md",
+      "role": "original public educational content/code or derived execution evidence",
+      "sha256": "9fe284b17de589b3a2480f40b9307515f763336850e0d6d9e43ee5ccebb4f089"
+    },
+    {
+      "path": "docs/examples/modern-robotics/requirements.txt",
+      "role": "original public educational content/code or derived execution evidence",
+      "sha256": "eb7c30035215b062be7292b3c50af01f6dfa03d0f8b37290df0565e8cb5c15c2"
+    },
+    {
+      "path": "docs/examples/modern-robotics/validate_all.py",
+      "role": "original public educational content/code or derived execution evidence",
+      "sha256": "3dca58b6a3ef513916b3b3f1d18e968553352becf3070cddced853750f67162d"
+    },
+    {
+      "path": "docs/examples/modern-robotics/validation_summary.json",
+      "role": "original public educational content/code or derived execution evidence",
+      "sha256": "e78b66252366b2d9c3a88d6b93abdbd8cd4c84c259fd7dc5cd4287e8c0911183"
+    }
+  ]
+}

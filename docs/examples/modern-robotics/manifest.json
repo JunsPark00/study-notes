@@ -1,0 +1,259 @@
+{
+  "schema_version": 1,
+  "title": "Modern Robotics 직접 작성한 보충 실험",
+  "authorship": "Made by Codex. Original educational explanations and experiments; figures computed from these scripts. No textbook or archival files.",
+  "python_recommended": ">=3.11",
+  "readme": "README.ko.md",
+  "requirements": "requirements.txt",
+  "validator": "validate_all.py",
+  "validation_summary": "validation_summary.json",
+  "chapters": [
+    {
+      "chapter": 1,
+      "file": "chapter01.py",
+      "title": "로봇 모델의 첫걸음 보충 실험",
+      "purpose_ko": "말단이 같은 두 관절각은 기구학의 다대일 대응을 보여 줍니다. 반경 경계는 관절 제한이 없는 모델에서만 성립합니다.",
+      "scope_ko": "직접 설계한 선택적 입문 실험. 해당 장 전체 이론·문제·실제 로봇을 재현하지 않습니다.",
+      "verified_claims_ko": [
+        "유한한 잔차와 모델별 허용오차를 assert로 확인합니다. 실제 값은 검증 JSON에 기록합니다."
+      ],
+      "command": "python chapter01.py --output-dir output/chapter01",
+      "figure": "../../assets/books/modern-robotics/chapter01/workspace.png",
+      "figures": [
+        "../../assets/books/modern-robotics/chapter01/workspace.png",
+        "../../assets/books/modern-robotics/chapter01/reach.png"
+      ],
+      "sha256": "53556e876f30243b8d5cd56a32c2c8248dd8821dc858394b21e04954baa2c169",
+      "validation_result": "../../assets/books/modern-robotics/chapter01/metrics.json",
+      "random_seed": 42
+    },
+    {
+      "chapter": 2,
+      "file": "chapter02.py",
+      "title": "구성 공간과 제약 보충 실험",
+      "purpose_ko": "작업 공간의 작은 원형 장애물도 구성 공간에서는 넓은 금지 영역을 만듭니다. 격자 그림은 연속 공간의 근사 표시이며 경로의 충돌 없음을 증명하지 않습니다.",
+      "scope_ko": "직접 설계한 선택적 입문 실험. 해당 장 전체 이론·문제·실제 로봇을 재현하지 않습니다.",
+      "verified_claims_ko": [
+        "유한한 잔차와 모델별 허용오차를 assert로 확인합니다. 실제 값은 검증 JSON에 기록합니다."
+      ],
+      "command": "python chapter02.py --output-dir output/chapter02",
+      "figure": "../../assets/books/modern-robotics/chapter02/cspace.png",
+      "figures": [
+        "../../assets/books/modern-robotics/chapter02/cspace.png",
+        "../../assets/books/modern-robotics/chapter02/mobility.png"
+      ],
+      "sha256": "49811f03670deec6a30dbcba1e2b4212bf97cdd6d8028633efe4e0f033cc786a",
+      "validation_result": "../../assets/books/modern-robotics/chapter02/metrics.json",
+      "random_seed": 42
+    },
+    {
+      "chapter": 3,
+      "file": "chapter03.py",
+      "title": "강체 운동과 좌표계 보충 실험",
+      "purpose_ko": "두 합성의 점 위치 차이는 비가환성입니다. 역변환 왕복 오차는 부동소수점 허용오차 안에서 0이지만 다른 좌표계 표기를 혼용하면 크게 늘어납니다.",
+      "scope_ko": "직접 설계한 선택적 입문 실험. 해당 장 전체 이론·문제·실제 로봇을 재현하지 않습니다.",
+      "verified_claims_ko": [
+        "유한한 잔차와 모델별 허용오차를 assert로 확인합니다. 실제 값은 검증 JSON에 기록합니다."
+      ],
+      "command": "python chapter03.py --output-dir output/chapter03",
+      "figure": "../../assets/books/modern-robotics/chapter03/composition.png",
+      "figures": [
+        "../../assets/books/modern-robotics/chapter03/composition.png",
+        "../../assets/books/modern-robotics/chapter03/order.png"
+      ],
+      "sha256": "2372e5d639940b6d2f638db6297fffae0bca81edce391aa2ef0ea5f76b9b9ce9",
+      "validation_result": "../../assets/books/modern-robotics/chapter03/metrics.json",
+      "random_seed": 42
+    },
+    {
+      "chapter": 4,
+      "file": "chapter04.py",
+      "title": "지수곱 순기구학 보충 실험",
+      "purpose_ko": "직접 계산한 평면 순기구학과 PoE 결과가 일치합니다. 이 검사는 링크 치수와 축 설정이 올바른지 확인하며 실제 제조 로봇의 보정 정확도를 보장하지 않습니다.",
+      "scope_ko": "직접 설계한 선택적 입문 실험. 해당 장 전체 이론·문제·실제 로봇을 재현하지 않습니다.",
+      "verified_claims_ko": [
+        "유한한 잔차와 모델별 허용오차를 assert로 확인합니다. 실제 값은 검증 JSON에 기록합니다."
+      ],
+      "command": "python chapter04.py --output-dir output/chapter04",
+      "figure": "../../assets/books/modern-robotics/chapter04/poe.png",
+      "figures": [
+        "../../assets/books/modern-robotics/chapter04/poe.png",
+        "../../assets/books/modern-robotics/chapter04/fk_residual.png"
+      ],
+      "sha256": "b1fce1e071662304a92084f89d5b9b849c2d22436f9e88b384ca0b6c0042890d",
+      "validation_result": "../../assets/books/modern-robotics/chapter04/metrics.json",
+      "random_seed": 42
+    },
+    {
+      "chapter": 5,
+      "file": "chapter05.py",
+      "title": "속도 기구학과 특이점 보충 실험",
+      "purpose_ko": "sin(q2)=0에서 조작성 면적이 0이 됩니다. 평면 작업을 3차원 위치 행렬의 determinant로 평가하면 항상 0이어서 유용한 차이를 놓칩니다.",
+      "scope_ko": "직접 설계한 선택적 입문 실험. 해당 장 전체 이론·문제·실제 로봇을 재현하지 않습니다.",
+      "verified_claims_ko": [
+        "유한한 잔차와 모델별 허용오차를 assert로 확인합니다. 실제 값은 검증 JSON에 기록합니다."
+      ],
+      "command": "python chapter05.py --output-dir output/chapter05",
+      "figure": "../../assets/books/modern-robotics/chapter05/manipulability.png",
+      "figures": [
+        "../../assets/books/modern-robotics/chapter05/manipulability.png",
+        "../../assets/books/modern-robotics/chapter05/velocity_ellipse.png"
+      ],
+      "sha256": "0d4f67044df37850bacc55ef8500ea71c7427ffaa5ee53c093eef8371ac9d49c",
+      "validation_result": "../../assets/books/modern-robotics/chapter05/metrics.json",
+      "random_seed": 42
+    },
+    {
+      "chapter": 6,
+      "file": "chapter06.py",
+      "title": "역기구학과 수렴 보충 실험",
+      "purpose_ko": "해석적 해를 순기구학에 다시 넣은 잔차와 수치해의 최종 잔차를 함께 확인합니다. 이 실습은 위치만 풀며 말단 방향을 추가하면 다른 작업 문제가 됩니다.",
+      "scope_ko": "직접 설계한 선택적 입문 실험. 해당 장 전체 이론·문제·실제 로봇을 재현하지 않습니다.",
+      "verified_claims_ko": [
+        "유한한 잔차와 모델별 허용오차를 assert로 확인합니다. 실제 값은 검증 JSON에 기록합니다."
+      ],
+      "command": "python chapter06.py --output-dir output/chapter06",
+      "figure": "../../assets/books/modern-robotics/chapter06/ik_convergence.png",
+      "figures": [
+        "../../assets/books/modern-robotics/chapter06/ik_convergence.png",
+        "../../assets/books/modern-robotics/chapter06/ik_path.png"
+      ],
+      "sha256": "3c667980ed373cd9031b13ec475a722ae6850f822c5350aeb7e60d25086790e1",
+      "validation_result": "../../assets/books/modern-robotics/chapter06/metrics.json",
+      "random_seed": 42
+    },
+    {
+      "chapter": 7,
+      "file": "chapter07.py",
+      "title": "폐사슬의 제약과 운동 보충 실험",
+      "purpose_ko": "다리 길이의 유한차분과 해석 Jacobian이 일치합니다. 최소 특이값은 이 모델의 국소 제약 민감도를 보여 주며 실제 관절 제한·충돌·전역 조립 모드를 포함하지 않습니다.",
+      "scope_ko": "직접 설계한 선택적 입문 실험. 해당 장 전체 이론·문제·실제 로봇을 재현하지 않습니다.",
+      "verified_claims_ko": [
+        "유한한 잔차와 모델별 허용오차를 assert로 확인합니다. 실제 값은 검증 JSON에 기록합니다."
+      ],
+      "command": "python chapter07.py --output-dir output/chapter07",
+      "figure": "../../assets/books/modern-robotics/chapter07/parallel_geometry.png",
+      "figures": [
+        "../../assets/books/modern-robotics/chapter07/parallel_geometry.png",
+        "../../assets/books/modern-robotics/chapter07/constraint_rank.png"
+      ],
+      "sha256": "caf234945a0320d7a5a38d8c373d9758f4e4da864a060504181c0d4341a0cc2b",
+      "validation_result": "../../assets/books/modern-robotics/chapter07/metrics.json",
+      "random_seed": 42
+    },
+    {
+      "chapter": 8,
+      "file": "chapter08.py",
+      "title": "동역학과 에너지 보충 실험",
+      "purpose_ko": "높은 정확도의 적분 결과에서 에너지 변화가 작습니다. Euler 오차는 모델의 에너지 손실이 아니라 수치 적분의 효과이며, 한 링크 결과를 다관절 전체 동역학 검증으로 확대하지 않습니다.",
+      "scope_ko": "직접 설계한 선택적 입문 실험. 해당 장 전체 이론·문제·실제 로봇을 재현하지 않습니다.",
+      "verified_claims_ko": [
+        "유한한 잔차와 모델별 허용오차를 assert로 확인합니다. 실제 값은 검증 JSON에 기록합니다."
+      ],
+      "command": "python chapter08.py --output-dir output/chapter08",
+      "figure": "../../assets/books/modern-robotics/chapter08/dynamics.png",
+      "figures": [
+        "../../assets/books/modern-robotics/chapter08/dynamics.png",
+        "../../assets/books/modern-robotics/chapter08/energy.png"
+      ],
+      "sha256": "ac232e1d492b6247e9bea3ebd97d7d6cb9cdcbd819f5f0c7031e06945aac89d8",
+      "validation_result": "../../assets/books/modern-robotics/chapter08/metrics.json",
+      "random_seed": 42
+    },
+    {
+      "chapter": 9,
+      "file": "chapter09.py",
+      "title": "경로와 시간 궤적 보충 실험",
+      "purpose_ko": "5차 프로파일의 끝점 속도·가속도가 0임을 수식으로 검사합니다. 사다리꼴 프로파일의 시간축은 단조 증가하며 스위칭 가속도는 불연속입니다.",
+      "scope_ko": "직접 설계한 선택적 입문 실험. 해당 장 전체 이론·문제·실제 로봇을 재현하지 않습니다.",
+      "verified_claims_ko": [
+        "유한한 잔차와 모델별 허용오차를 assert로 확인합니다. 실제 값은 검증 JSON에 기록합니다."
+      ],
+      "command": "python chapter09.py --output-dir output/chapter09",
+      "figure": "../../assets/books/modern-robotics/chapter09/time_scaling.png",
+      "figures": [
+        "../../assets/books/modern-robotics/chapter09/time_scaling.png",
+        "../../assets/books/modern-robotics/chapter09/speed_profile.png"
+      ],
+      "sha256": "21c06462c922c89dfc0eac3de58fb790d6d94cf8dbc9f028391fb27aec786b05",
+      "validation_result": "../../assets/books/modern-robotics/chapter09/metrics.json",
+      "random_seed": 42
+    },
+    {
+      "chapter": 10,
+      "file": "chapter10.py",
+      "title": "충돌 없는 경로 계획 보충 실험",
+      "purpose_ko": "출발·목표 사이의 직선은 충돌하지만 격자 그래프의 검증된 변을 따라 우회할 수 있습니다. 로봇 크기를 고려하려면 장애물을 팽창시키거나 실제 로봇 기하를 검사해야 합니다.",
+      "scope_ko": "직접 설계한 선택적 입문 실험. 해당 장 전체 이론·문제·실제 로봇을 재현하지 않습니다.",
+      "verified_claims_ko": [
+        "유한한 잔차와 모델별 허용오차를 assert로 확인합니다. 실제 값은 검증 JSON에 기록합니다."
+      ],
+      "command": "python chapter10.py --output-dir output/chapter10",
+      "figure": "../../assets/books/modern-robotics/chapter10/planning.png",
+      "figures": [
+        "../../assets/books/modern-robotics/chapter10/planning.png",
+        "../../assets/books/modern-robotics/chapter10/path_cost.png"
+      ],
+      "sha256": "6e82e89b94617ac531dae51826952a1c7e4ab3bcf2f8a3bcf94f82174aff2a3e",
+      "validation_result": "../../assets/books/modern-robotics/chapter10/metrics.json",
+      "random_seed": 42
+    },
+    {
+      "chapter": 11,
+      "file": "chapter11.py",
+      "title": "로봇 제어와 추종 오차 보충 실험",
+      "purpose_ko": "임계 감쇠의 해석해와 수치 적분을 비교한 뒤 감쇠비를 바꿉니다. 무포화 선형 모델의 결과를 실제 하드웨어의 안정성 보장으로 해석하지 않습니다.",
+      "scope_ko": "직접 설계한 선택적 입문 실험. 해당 장 전체 이론·문제·실제 로봇을 재현하지 않습니다.",
+      "verified_claims_ko": [
+        "유한한 잔차와 모델별 허용오차를 assert로 확인합니다. 실제 값은 검증 JSON에 기록합니다."
+      ],
+      "command": "python chapter11.py --output-dir output/chapter11",
+      "figure": "../../assets/books/modern-robotics/chapter11/control_response.png",
+      "figures": [
+        "../../assets/books/modern-robotics/chapter11/control_response.png",
+        "../../assets/books/modern-robotics/chapter11/overshoot.png"
+      ],
+      "sha256": "204073d97ca37e18b941fec514d145094ea5b8229dbc2f473d8f2d9024161cee",
+      "validation_result": "../../assets/books/modern-robotics/chapter11/metrics.json",
+      "random_seed": 42
+    },
+    {
+      "chapter": 12,
+      "file": "chapter12.py",
+      "title": "접촉 렌치와 형상 폐쇄 보충 실험",
+      "purpose_ko": "4접촉의 (fy,τ) 투영에는 원점이 있지만 fx 방향이 없어 전체 3D 형상 폐쇄는 실패합니다. 투영만으로 판정할 수 없습니다. 접촉 변형·마찰·고차 효과는 제외합니다.",
+      "scope_ko": "직접 설계한 선택적 입문 실험. 해당 장 전체 이론·문제·실제 로봇을 재현하지 않습니다.",
+      "verified_claims_ko": [
+        "유한한 잔차와 모델별 허용오차를 assert로 확인합니다. 실제 값은 검증 JSON에 기록합니다."
+      ],
+      "command": "python chapter12.py --output-dir output/chapter12",
+      "figure": "../../assets/books/modern-robotics/chapter12/contacts.png",
+      "figures": [
+        "../../assets/books/modern-robotics/chapter12/contacts.png",
+        "../../assets/books/modern-robotics/chapter12/wrench_hull.png"
+      ],
+      "sha256": "962e3431eafccf76ac3327865309a7026d372fd45a48bcd9d75234379988881c",
+      "validation_result": "../../assets/books/modern-robotics/chapter12/metrics.json",
+      "random_seed": 42
+    },
+    {
+      "chapter": 13,
+      "file": "chapter13.py",
+      "title": "바퀴 로봇과 비홀로노믹 운동 보충 실험",
+      "purpose_ko": "원호 운동의 Euler 위치 오차는 시간 간격에 비례합니다. ω=0이면 원 반경을 계산하지 않습니다. 위치 오차가 반올림 수준이면 수렴 비율도 정의하지 않습니다. 미끄럼·센서 편향은 제외합니다.",
+      "scope_ko": "직접 설계한 선택적 입문 실험. 해당 장 전체 이론·문제·실제 로봇을 재현하지 않습니다.",
+      "verified_claims_ko": [
+        "유한한 잔차와 모델별 허용오차를 assert로 확인합니다. 실제 값은 검증 JSON에 기록합니다."
+      ],
+      "command": "python chapter13.py --output-dir output/chapter13",
+      "figure": "../../assets/books/modern-robotics/chapter13/odometry.png",
+      "figures": [
+        "../../assets/books/modern-robotics/chapter13/odometry.png",
+        "../../assets/books/modern-robotics/chapter13/integration_error.png"
+      ],
+      "sha256": "9dddbfd5f75f95c9b59a56ed3fa5867972d017a098691d6df13341ba44bad6e3",
+      "validation_result": "../../assets/books/modern-robotics/chapter13/metrics.json",
+      "random_seed": 42
+    }
+  ]
+}

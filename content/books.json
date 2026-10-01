@@ -39,5 +39,22 @@
     "attributionFile": "books/numerical-optimization/attribution.md",
     "diagramsFile": "books/numerical-optimization/diagrams.json",
     "examplesManifest": "examples/numerical-optimization/manifest.json"
+  },
+  {
+    "id": "modern-robotics",
+    "title": "Modern Robotics",
+    "subtitle": "Mechanics, Planning, and Control",
+    "authors": [
+      "Kevin M. Lynch",
+      "Frank C. Park"
+    ],
+    "category": "로봇공학",
+    "description": "구성 공간부터 바퀴 로봇까지, 직접 작성한 한국어 보충 설명과 작은 모델의 독립 실험으로 학습합니다. 전체 교재 번역이 아닌 선택적 입문 노트입니다.",
+    "edition": "2017",
+    "language": "한국어 보충 학습 노트",
+    "officialUrl": "https://modernrobotics.northwestern.edu/",
+    "chaptersFile": "books/modern-robotics/chapters.json",
+    "attributionFile": "books/modern-robotics/attribution.md",
+    "examplesManifest": "examples/modern-robotics/manifest.json"
   }
 ]
