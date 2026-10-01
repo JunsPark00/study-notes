@@ -1,3 +1,4 @@
+import {normalize, searchRecords} from './search.mjs';
 'use strict';
 (() => {
   const $ = s => document.querySelector(s);
@@ -8,7 +9,7 @@
   const status = $('#search-status');
   let indexPromise;
   let currentSearch = 0;
-  const normalize = value => value.toLocaleLowerCase('ko').normalize('NFKC');
+  const scope = $('#search-book');
   const loadIndex = () => indexPromise || (indexPromise = fetch(document.body.dataset.base+'assets/search-index.json').then(response => { if (!response.ok) throw new Error('검색 자료를 불러올 수 없습니다'); return response.json(); }).catch(error => { indexPromise = null; throw error; }));
   const openSearch = () => { if (!searchDialog.open) searchDialog.showModal(); input.focus(); loadIndex().catch(() => { status.textContent = '검색 자료를 불러오지 못했습니다. 잠시 후 다시 검색해 주세요.'; }); };
   $$('.search-trigger').forEach(button => button.addEventListener('click', openSearch));
@@ -37,30 +38,29 @@
     }
     element.append(document.createTextNode(text.slice(pos)));
   };
-  input.addEventListener('input', async () => {
+  const runSearch = async () => {
     const request = ++currentSearch;
     const query=input.value.trim();
     results.replaceChildren();
-    if (!query) { status.textContent='개념이나 키워드를 입력하면 모든 장에서 찾아드립니다'; return; }
+    if (!query) { status.textContent=scope.value ? '선택한 책에서 찾을 개념이나 키워드를 입력하세요' : '모든 책에서 찾을 제목, 개념이나 키워드를 입력하세요'; return; }
     status.textContent='검색 중…';
     try {
       const data=await loadIndex(); if (request!==currentSearch) return;
       const terms=normalize(query).split(/\s+/);
-      const matches=data.map(record=>{
-        const haystack=normalize(record.chapterTitle+' '+record.title+' '+record.text);
-        const score=terms.every(term=>haystack.includes(term)) ? terms.reduce((score,term)=>score+(normalize(record.title).includes(term)?12:0)+(normalize(record.chapterTitle).includes(term)?4:0),1) : 0;
-        return {...record,score};
-      }).filter(record=>record.score).sort((a,b)=>b.score-a.score || a.chapter-b.chapter);
+      const matches=searchRecords(data,query,scope.value);
       status.textContent=matches.length ? `${matches.length}개의 문단을 찾았습니다${matches.length>30?' · 앞의 30개 표시':''}` : '검색 결과가 없습니다. 다른 개념이나 짧은 키워드로 검색해 보세요.';
       for(const record of matches.slice(0,30)){
         const a=document.createElement('a');a.className='search-result';a.href=record.url;
+        const book=document.createElement('span');book.className='search-result-book';book.textContent=record.bookTitle;
         const chapter=document.createElement('span');chapter.textContent=`${record.chapter}장 · ${record.chapterTitle}`;
         const title=document.createElement('strong');highlight(title,record.title,query);
         const preview=document.createElement('p');const text=record.text.replace(/\s+/g,' ').trim();const at=normalize(text).indexOf(terms[0]);const start=Math.max(0,at-40);const snippet=(start?'…':'')+text.slice(start,start+150)+(text.length>start+150?'…':'');highlight(preview,snippet,query);
-        a.append(chapter,title,preview);a.addEventListener('click',()=>searchDialog.close());results.append(a);
+        a.append(book,chapter,title,preview);a.addEventListener('click',()=>searchDialog.close());results.append(a);
       }
     } catch(error){if(request===currentSearch)status.textContent='검색 자료를 불러오지 못했습니다. 연결을 확인하고 다시 검색해 주세요.';}
-  });
+  };
+  input.addEventListener('input',runSearch);
+  scope.addEventListener('change',runSearch);
   const figureDialog=$('#figure-dialog'), figureImage=$('#figure-image'), viewport=$('.figure-viewport'), sizeButton=$('#figure-size');
   $$('[data-zoom]').forEach(link=>link.addEventListener('click',event=>{
     event.preventDefault();figureImage.src=link.dataset.zoom;figureImage.alt=link.dataset.caption;$('#figure-title').textContent=link.dataset.caption;

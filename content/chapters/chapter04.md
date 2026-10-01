@@ -164,7 +164,7 @@ RMSE는 추정 평균이 참 상태에 얼마나 가까운지 평가합니다. �
 
 ## 출처와 실행 범위
 
-- [저자 공식 교재 페이지](https://sites.engineering.ucsb.edu/~jbraw/mpc/)와 [2판 1쇄 원문 PDF](https://sites.engineering.ucsb.edu/~jbraw/mpc/MPC-book-2nd-edition-1st-printing.pdf): 제4장, 인쇄 pp.269–338
+- [저자 공식 교재 페이지](https://sites.engineering.ucsb.edu/~jbraw/mpc/) · 참고 판본: 2판 1쇄(2017): 제4장, 인쇄 pp.269–338
 이 사이트의 개념 도식과 수식 카드는 본문의 모델·수치로 새로 제작했습니다. 교재에서 가져온 모델·예제는 해당 문단에 출처를 표시합니다. 각 장의 독립 실행 예제는 명시된 작은 보충 문제를 다루며, 교재의 모든 계산이나 증명을 재현하는 구현은 아닙니다. 수치 결과는 모델, 정보 시점, 잡음 가정과 허용오차를 함께 확인해 주세요.
 
 ## 핵심 수식 카드

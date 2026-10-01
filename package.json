@@ -1,13 +1,15 @@
 {
-  "name": "rawlings-mpc-korean-study-notes",
-  "version": "1.0.0",
+  "name": "study-notes",
+  "version": "2.0.0",
   "private": true,
-  "description": "Unofficial Korean MPC study notes and a self-contained GitHub Pages reading site",
+  "description": "A data-driven multi-book Korean study library with static book and chapter pages",
   "type": "module",
   "scripts": {
     "build": "node scripts/build.mjs",
     "check": "python scripts/check.py",
-    "serve": "python scripts/serve.py"
+    "serve": "python scripts/serve.py",
+    "test": "node scripts/test-multi-book.mjs",
+    "verify": "npm run build && npm run check && npm test"
   },
   "dependencies": {
     "katex": "0.18.10",

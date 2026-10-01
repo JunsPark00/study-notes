@@ -1,0 +1,25 @@
+[
+  {
+    "id": "model-predictive-control",
+    "title": "Model Predictive Control",
+    "subtitle": "Theory, Computation, and Design",
+    "authors": [
+      "James B. Rawlings",
+      "David Q. Mayne",
+      "Moritz M. Diehl"
+    ],
+    "category": "제어 이론",
+    "description": "미래를 예측하고, 지금의 입력을 결정하는 방법. 기초 모델에서 상태 추정과 수치 최적화까지, 수식의 가정과 계산의 의미를 한국어로 정리합니다.",
+    "edition": "2nd edition · 1st printing · 2017",
+    "language": "한국어 학습 노트",
+    "officialUrl": "https://sites.engineering.ucsb.edu/~jbraw/mpc/",
+    "chaptersFile": "chapters.json",
+    "attributionFile": "ATTRIBUTION.ko.md",
+    "formulasFile": "formulas.json",
+    "diagramsFile": "diagrams.json",
+    "videosFile": "videos.json",
+    "examplesManifest": "examples/manifest.json",
+    "legacyChapterUrls": true,
+    "generatedAppendixHeading": "핵심 수식 카드"
+  }
+]

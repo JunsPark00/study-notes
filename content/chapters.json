@@ -4,55 +4,104 @@
     "title": "MPC 시작하기",
     "file": "chapters/chapter01.md",
     "diagram_count": 2,
-    "formula_card_count": 4
+    "formula_card_count": 4,
+    "description": "모델, 이산화, 최적 제어와 상태 추정을 하나의 제어 순환으로 연결합니다.",
+    "tags": [
+      "모델",
+      "LQR",
+      "상태 추정"
+    ],
+    "category": "FOUNDATIONS"
   },
   {
     "number": 2,
     "title": "명목 MPC: 제약과 안정성",
     "file": "chapters/chapter02.md",
     "diagram_count": 2,
-    "formula_card_count": 4
+    "formula_card_count": 4,
+    "description": "제약을 만족하는 해가 다음 시점에도 존재하는 이유와 안정성 조건을 살펴봅니다.",
+    "tags": [
+      "실행 가능성",
+      "종단 조건"
+    ],
+    "category": "FOUNDATIONS"
   },
   {
     "number": 3,
     "title": "강인·확률적 MPC",
     "file": "chapters/chapter03.md",
     "diagram_count": 2,
-    "formula_card_count": 4
+    "formula_card_count": 4,
+    "description": "모델 오차와 외란을 최악의 경우와 확률의 관점에서 다룹니다.",
+    "tags": [
+      "불확실성",
+      "Tube MPC"
+    ],
+    "category": "ESTIMATION & CONTROL"
   },
   {
     "number": 4,
     "title": "상태 추정과 MHE",
     "file": "chapters/chapter04.md",
     "diagram_count": 2,
-    "formula_card_count": 4
+    "formula_card_count": 4,
+    "description": "센서와 모델을 결합해 보이지 않는 상태를 추정하고, 과거 정보를 요약합니다.",
+    "tags": [
+      "Kalman filter",
+      "MHE"
+    ],
+    "category": "ESTIMATION & CONTROL"
   },
   {
     "number": 5,
     "title": "출력 피드백 MPC",
     "file": "chapters/chapter05.md",
     "diagram_count": 2,
-    "formula_card_count": 4
+    "formula_card_count": 4,
+    "description": "추정과 제어를 연결하고, 외란 모델과 정상 목표로 추종 오차를 다룹니다.",
+    "tags": [
+      "추정 오차",
+      "Offset-free"
+    ],
+    "category": "ESTIMATION & CONTROL"
   },
   {
     "number": 6,
     "title": "분산 MPC",
     "file": "chapters/chapter06.md",
     "diagram_count": 2,
-    "formula_card_count": 4
+    "formula_card_count": 4,
+    "description": "서로 연결된 제어기들이 예측과 자원을 나누며 협력하는 방법을 살펴봅니다.",
+    "tags": [
+      "협력",
+      "공유 제약"
+    ],
+    "category": "ESTIMATION & CONTROL"
   },
   {
     "number": 7,
     "title": "명시적 MPC",
     "file": "chapters/chapter07.md",
     "diagram_count": 2,
-    "formula_card_count": 4
+    "formula_card_count": 4,
+    "description": "최적화의 답을 미리 구해 두고, 상태에 맞는 제어법칙을 찾아 적용합니다.",
+    "tags": [
+      "mpQP",
+      "활성 집합"
+    ],
+    "category": "COMPUTATION"
   },
   {
     "number": 8,
     "title": "수치 최적 제어",
     "file": "chapters/chapter08.md",
     "diagram_count": 3,
-    "formula_card_count": 4
+    "formula_card_count": 4,
+    "description": "이산화부터 SQP와 도함수 검증까지, 실제로 풀 수 있는 문제를 구성합니다.",
+    "tags": [
+      "Shooting",
+      "SQP"
+    ],
+    "category": "COMPUTATION"
   }
 ]
