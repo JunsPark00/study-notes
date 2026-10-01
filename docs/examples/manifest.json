@@ -1,0 +1,293 @@
+{
+  "schema_version": 1,
+  "title": "MPC 한국어 학습 노트: 독립 실행 보충 예제",
+  "authorship": "New standalone implementations of compact supplemental mathematical examples; no book text, book figures or PDF included.",
+  "textbook_attribution": {
+    "authors": [
+      "James B. Rawlings",
+      "David Q. Mayne",
+      "Moritz M. Diehl"
+    ],
+    "title": "Model Predictive Control: Theory, Computation, and Design",
+    "edition": "2nd edition, 1st printing (2017)",
+    "official_url": "https://sites.engineering.ucsb.edu/~jbraw/mpc/"
+  },
+  "readme": "README.ko.md",
+  "requirements": "requirements.txt",
+  "validator": "validate_all.py",
+  "validation_summary": "validation_summary.json",
+  "python_recommended": ">=3.10",
+  "chapters": [
+    {
+      "chapter": 1,
+      "file": "chapter01_double_integrator.py",
+      "script": "chapter01_double_integrator.py",
+      "title": "Euler와 정확한 ZOH",
+      "purpose_ko": "총 시간 4초를 고정해 이중 적분기의 이산화 오차를 비교합니다.",
+      "dependencies": [
+        "numpy",
+        "scipy",
+        "matplotlib"
+      ],
+      "command": "python chapter01_double_integrator.py --output-dir output/chapter01",
+      "verified_claims_ko": [
+        "ZOH 종단 위치 8 m",
+        "dt=0.4 s인 Euler 종단 위치 7.2 m",
+        "dt=0.2 s인 Euler 종단 위치 7.6 m",
+        "Euler 위치 오차는 dt를 절반으로 줄이면 절반"
+      ],
+      "scope_ko": "일정 가속도 모델의 전파만 계산합니다. MPC 최적 입력은 구하지 않습니다.",
+      "validation_result": "validation_output/chapter01/result.json",
+      "figure": "validation_output/chapter01/figure.png",
+      "sha256": "96782fa0d03efe23667b0c9036c8bc4b42e29535d65987f21c6eb86bff6397b3",
+      "validation_status": "passed",
+      "random_seed": null,
+      "assert_checks": [
+        "ZOH equals the continuous analytic trajectory",
+        "Euler velocity is exact for constant acceleration",
+        "Euler position error is T*dt*u/2",
+        "Fixed-time error halves with dt"
+      ]
+    },
+    {
+      "chapter": 2,
+      "file": "chapter02_constrained_mpc.py",
+      "script": "chapter02_constrained_mpc.py",
+      "title": "제약 QP와 종단 실행 가능성",
+      "purpose_ko": "스칼라 명목 MPC를 반복해서 풀고 이동 후보의 제약·비용 감소를 확인합니다.",
+      "dependencies": [
+        "numpy",
+        "scipy",
+        "matplotlib"
+      ],
+      "command": "python chapter02_constrained_mpc.py --output-dir output/chapter02",
+      "verified_claims_ko": [
+        "한 단계 실행 가능 반경 1.363636",
+        "x=1.3은 한 단계 실행 가능, x=1.4는 불가능",
+        "종단 제어의 허용성·불변성·DARE 감소 식",
+        "20단계 모사의 상태·입력·종단 제약과 이동 후보 비용 상계"
+      ],
+      "scope_ko": "정확한 상태와 모델을 가정한 작은 명목 예제입니다. 외란과 추정 오차를 포함하지 않습니다.",
+      "validation_result": "validation_output/chapter02/result.json",
+      "figure": "validation_output/chapter02/figure.png",
+      "sha256": "42c3ec4700f3180c9df52efac2feec48ffaff67bcac5461295299a65942a6134",
+      "validation_status": "passed",
+      "random_seed": null,
+      "assert_checks": [
+        "One-step feasibility separates x=1.3 and x=1.4",
+        "Terminal feedback is admissible and invariant",
+        "Terminal DARE decrease identity",
+        "Every QP reports success",
+        "All state, input, and terminal constraints",
+        "Shifted candidates remain feasible",
+        "Optimal value decrease along the tested trajectory"
+      ]
+    },
+    {
+      "chapter": 3,
+      "file": "chapter03_tube_chance.py",
+      "script": "chapter03_tube_chance.py",
+      "title": "튜브 여유와 확률 위험 예산",
+      "purpose_ko": "유계 오차의 제약 축소와 별도의 가우스 10단계 위험 배분을 구분해 계산합니다.",
+      "dependencies": [
+        "numpy",
+        "scipy",
+        "matplotlib"
+      ],
+      "command": "python chapter03_tube_chance.py --output-dir output/chapter03",
+      "verified_claims_ko": [
+        "불변 오차 반경 0.2, 명목 상태 한계 2.8, 명목 입력 한계 0.88",
+        "양측 5%와 0.5% 가우스 분위수 1.959964와 2.807034",
+        "독립 가우스 10단계의 이론상 1회 이상 위반 확률 0.0488899",
+        "100000개 가우스 표본의 빈도와 정확한 확률 비교"
+      ],
+      "scope_ko": "튜브 여유 계산과 분포별 위험 예시입니다. 완전한 강인·확률적 MPC 설계는 아닙니다.",
+      "validation_result": "validation_output/chapter03/result.json",
+      "figure": "validation_output/chapter03/figure.png",
+      "sha256": "264e09fb083b92b9c0320d267f9ee7bad3ce78e2066fa9abdd58161a8433cf46",
+      "validation_status": "passed",
+      "random_seed": 202603,
+      "assert_checks": [
+        "Interval-corner invariance",
+        "Analytic tightening 0.2 / 2.8 / 0.88",
+        "Finite bounded-noise trajectory constraints",
+        "Gaussian two-sided tail equals budget",
+        "Union bound needs no temporal independence",
+        "Independent Gaussian simulation is within five standard errors; not a safety proof"
+      ]
+    },
+    {
+      "chapter": 4,
+      "file": "chapter04_scalar_kalman.py",
+      "script": "chapter04_scalar_kalman.py",
+      "title": "스칼라 칼만 필터",
+      "purpose_ko": "한 번의 측정 보정과 다음 예측, 반복 추정의 공분산을 확인합니다.",
+      "dependencies": [
+        "numpy",
+        "scipy",
+        "matplotlib"
+      ],
+      "command": "python chapter04_scalar_kalman.py --output-dir output/chapter04",
+      "verified_claims_ko": [
+        "이득 0.8, 사후 평균 0.8, 사후 분산 0.2",
+        "과정 분산 0.04를 더한 다음 사전 분산 0.24",
+        "정상 필터링 분산 약 0.0819804",
+        "독립 궤적 20000개의 최종 공분산 보정과 95% 구간 빈도"
+      ],
+      "scope_ko": "선형·가우스 칼만 필터 예제입니다. MHE, 평활화, MPC 결합은 구현하지 않습니다.",
+      "validation_result": "validation_output/chapter04/result.json",
+      "figure": "validation_output/chapter04/figure.png",
+      "sha256": "e871ca5525b6ca808d12a05fcb433e0652c5aca8abc7fe80028d1d7070b1d154",
+      "validation_status": "passed",
+      "random_seed": 202604,
+      "assert_checks": [
+        "Hand calculation 0.8 / 0.2 / 0.24",
+        "Independent precision-form check",
+        "Nonnegative covariance; measurement contraction",
+        "Stationary Riccati variance",
+        "Finite Monte Carlo calibration within five standard errors; no pathwise guarantee"
+      ]
+    },
+    {
+      "chapter": 5,
+      "file": "chapter05_coupled_covariance.py",
+      "script": "chapter05_coupled_covariance.py",
+      "title": "두 오차의 결합 공분산",
+      "purpose_ko": "추정·추종 오차의 교차 공분산과 RMS, 강인 여유를 따로 계산합니다.",
+      "dependencies": [
+        "numpy",
+        "scipy",
+        "matplotlib"
+      ],
+      "command": "python chapter05_coupled_covariance.py --output-dir output/chapter05",
+      "verified_claims_ko": [
+        "결합 정상 공분산의 Lyapunov 잔차",
+        "교차항을 포함한 이론 RMS 약 0.0241972",
+        "교차항을 무시하면 RMS 약 0.0269526",
+        "개별 구간 합 약 0.2404167와 결합 방향 상한 약 0.1354167"
+      ],
+      "scope_ko": "독립 균등 잡음과 영 초기 오차의 작은 모사입니다. RMS는 최악 경로의 강인 한계가 아닙니다.",
+      "validation_result": "validation_output/chapter05/result.json",
+      "figure": "validation_output/chapter05/figure.png",
+      "sha256": "5106e86860cf35ce68a3f3322a9f8cf26787cd68b1303bc614fc5ea6c3d5d4b6",
+      "validation_status": "passed",
+      "random_seed": 20261005,
+      "assert_checks": [
+        "Schur stable error dynamics",
+        "discrete Lyapunov residual below 1e-14",
+        "positive definite covariance",
+        "seeded covariance relative error below 3.5%",
+        "seeded RMS relative error below 2%",
+        "individual and coupled bounds contain trajectory",
+        "cross covariance is nonzero"
+      ]
+    },
+    {
+      "chapter": 6,
+      "file": "chapter06_distributed_qp.py",
+      "script": "chapter06_distributed_qp.py",
+      "title": "협조 반복과 최적성 인증",
+      "purpose_ko": "전체 후보 평균과 단순 동시 결합을 비교하고 상자 QP의 비용 오차 상한을 계산합니다.",
+      "dependencies": [
+        "numpy",
+        "scipy",
+        "matplotlib"
+      ],
+      "command": "python chapter06_distributed_qp.py --output-dir output/chapter06",
+      "verified_claims_ko": [
+        "단순 동시 결합의 반복 반지름 1.6",
+        "전체 후보 평균의 반복 반지름 약 0.933333",
+        "비용 3.9에서 단순 결합은 9.984, 후보 평균은 약 0.0693333",
+        "별도 상자 QP의 기울기 기반 비용 오차 인증과 중앙집중 해 비교"
+      ],
+      "scope_ko": "고정 상태에서의 정적 최적화입니다. 분산 MPC 폐루프 안정성·통신 지연·속도 향상 실험은 아닙니다.",
+      "validation_result": "validation_output/chapter06/result.json",
+      "figure": "validation_output/chapter06/figure.png",
+      "sha256": "e0171c022e67333b2df95244715c9d99b30c4ae475feb6305cffbeaf75a05dda",
+      "validation_status": "passed",
+      "random_seed": null,
+      "assert_checks": [
+        "raw iteration spectral radius above 1 and averaged radius below 1",
+        "candidate feasibility and cost descent at every iteration",
+        "box dual gap below 1e-10",
+        "central SLSQP success and projected stationarity",
+        "central cost difference within certificate at every iterate",
+        "final centralized input agreement below 1e-7"
+      ]
+    },
+    {
+      "chapter": 7,
+      "file": "chapter07_explicit_mpc.py",
+      "script": "chapter07_explicit_mpc.py",
+      "title": "세 영역의 명시적 입력",
+      "purpose_ko": "구간별 아핀 입력을 독립 스칼라 최적화와 비교하고 KKT·민감도를 검사합니다.",
+      "dependencies": [
+        "numpy",
+        "scipy",
+        "matplotlib"
+      ],
+      "command": "python chapter07_explicit_mpc.py --output-dir output/chapter07",
+      "verified_claims_ko": [
+        "J=x²+xu+u²/2, 입력 한계 ±1의 세 영역",
+        "x=0.4에서 u=-0.4, V=0.08",
+        "x=1.6에서 u=-1, V=1.46",
+        "KKT 정지성·상보성·영역 경계 연속성·영역 유지 반지름"
+      ],
+      "scope_ko": "스칼라 파라미터 QP이며 다변수 임계 영역 열거기나 다단계 MPC 솔버가 아닙니다.",
+      "validation_result": "validation_output/chapter07/result.json",
+      "figure": "validation_output/chapter07/figure.png",
+      "sha256": "9c98514f71cf862226a08211170f0a1827108530ba29fe3b83615adfdb0aea1e",
+      "validation_status": "passed",
+      "random_seed": null,
+      "assert_checks": [
+        "independent scalar optimizer agreement on 407 sample parameters",
+        "primal and dual feasibility",
+        "KKT stationarity and complementarity",
+        "piecewise value equals objective at explicit input",
+        "closed-region perturbations follow regional affine law",
+        "one-sided input slopes change at both boundaries",
+        "value derivative remains continuous at both boundaries in this example"
+      ]
+    },
+    {
+      "chapter": 8,
+      "file": "chapter08_rk4_taylor.py",
+      "script": "chapter08_rk4_taylor.py",
+      "title": "RK4와 Taylor 잔차 검사",
+      "purpose_ko": "같은 최종 시간의 적분 오차와 올바른·틀린 기울기의 Taylor 차수를 확인합니다.",
+      "dependencies": [
+        "numpy",
+        "matplotlib"
+      ],
+      "command": "python chapter08_rk4_taylor.py --output-dir output/chapter08",
+      "verified_claims_ko": [
+        "고정 시간 T=1 s에서 Euler 약 1차, RK4 약 4차 전역 오차",
+        "h=0.1 s에서 Euler 0.8, 정확값 약 0.8096748",
+        "작은 제약 이차 비용에서 u=-1, J=0.325",
+        "올바른 기울기 0.09는 2차, 의도적으로 틀린 0.08은 약 1차 Taylor 잔차"
+      ],
+      "scope_ko": "상수 입력 스칼라 ODE와 별도의 이차함수 미분 검사입니다. 일반 NMPC·SQP·수반 미분 구현은 아닙니다.",
+      "validation_result": "validation_output/chapter08/result.json",
+      "figure": "validation_output/chapter08/figure.png",
+      "sha256": "36715fa726463aa5a9db483589b16479ca8938071bea17966c7e65a87f05c910",
+      "validation_status": "passed",
+      "random_seed": null,
+      "assert_checks": [
+        "Euler and RK4 fixed-time errors decrease under mesh refinement",
+        "final Euler order between 0.98 and 1.05",
+        "final RK4 order between 3.95 and 4.1",
+        "one-interval Euler state and quadratic objective agree with direct algebra",
+        "correct Taylor residual order near 2 in two directions",
+        "deliberately wrong Taylor residual order near 1 in two directions",
+        "independent central difference agrees with correct gradient"
+      ]
+    }
+  ],
+  "validation_status": "passed",
+  "verified_environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "matplotlib": "3.10.8"
+  }
+}

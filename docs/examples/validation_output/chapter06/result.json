@@ -1,0 +1,104 @@
+{
+  "chapter": 6,
+  "example": "cooperative candidate averaging and bounded QP",
+  "status": "passed",
+  "random_seed": null,
+  "checks": [
+    "raw iteration spectral radius above 1 and averaged radius below 1",
+    "candidate feasibility and cost descent at every iteration",
+    "box dual gap below 1e-10",
+    "central SLSQP success and projected stationarity",
+    "central cost difference within certificate at every iterate",
+    "final centralized input agreement below 1e-7"
+  ],
+  "units": "all quantities dimensionless; p is optimization iteration, not plant time",
+  "H": [
+    [
+      1.0,
+      0.8,
+      0.8
+    ],
+    [
+      0.8,
+      1.0,
+      0.8
+    ],
+    [
+      0.8,
+      0.8,
+      1.0
+    ]
+  ],
+  "hessian_eigenvalues": [
+    0.19999999999999968,
+    0.19999999999999996,
+    2.6
+  ],
+  "unconstrained_demo": {
+    "linear_term": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "initial_input": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "raw_spectral_radius": 1.6,
+    "averaged_spectral_radius": 0.9333333333333333,
+    "raw_first_input": [
+      -1.6,
+      -1.6,
+      -1.6
+    ],
+    "averaged_first_input": [
+      0.1333333333333333,
+      0.1333333333333333,
+      0.1333333333333333
+    ],
+    "initial_cost": 3.9000000000000004,
+    "raw_first_cost": 9.984000000000002,
+    "averaged_first_cost": 0.0693333333333333
+  },
+  "bounded_qp": {
+    "linear_term": [
+      -0.9,
+      0.2,
+      -0.1
+    ],
+    "absolute_input_limit": 0.4,
+    "iterations": 58,
+    "stopping_tolerance": 1e-10,
+    "cooperative_solution": [
+      0.39999999997552244,
+      -0.39999999996634344,
+      0.09999999978582197
+    ],
+    "central_solution": [
+      0.4,
+      -0.4,
+      0.09999999999999974
+    ],
+    "central_success": true,
+    "central_method": "scipy.optimize.minimize, SLSQP",
+    "cooperative_cost": -0.4129999999751553,
+    "central_cost": -0.41300000000000003,
+    "box_gap_certificate": 8.689515773596668e-11,
+    "actual_cost_gap": 2.4844737378515447e-11,
+    "central_projected_gradient_residual_inf": 2.914335439641036e-16,
+    "max_input_difference": 2.1417777273935457e-10,
+    "raw_gradient_at_central_solution": [
+      -0.7400000000000002,
+      0.19999999999999982,
+      -2.914335439641036e-16
+    ]
+  },
+  "checks_passed": true,
+  "limitations": [
+    "This is fixed-state optimization, with no plant or MPC horizon.",
+    "The box certificate is an objective-gap bound, not a stability claim.",
+    "Independent box constraints and shared synchronous iterates are assumed.",
+    "Serial Python candidate calculations do not measure distributed speedup."
+  ]
+}

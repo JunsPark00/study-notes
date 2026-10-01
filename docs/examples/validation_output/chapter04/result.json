@@ -1,0 +1,29 @@
+{
+  "chapter": 4,
+  "status": "passed",
+  "random_seed": 202604,
+  "units": "dimensionless state and measurement; variances in squared state units",
+  "scope": "Exact linear-Gaussian filtering; no MHE or MPC implementation",
+  "single_update": {
+    "innovation_variance": 1.25,
+    "gain": 0.8,
+    "posterior_mean": 0.8,
+    "posterior_variance": 0.2,
+    "next_prior_variance": 0.24000000000000002
+  },
+  "monte_carlo": {
+    "independent_trajectories": 20000,
+    "steps": 50,
+    "final_normalized_mean_squared_error": 1.0057769908299121,
+    "final_95pct_coverage": 0.95025,
+    "coverage_standard_error": 0.0015411035007422448
+  },
+  "steady_filtered_variance": 0.08198039027185569,
+  "checks": [
+    "Hand calculation 0.8 / 0.2 / 0.24",
+    "Independent precision-form check",
+    "Nonnegative covariance; measurement contraction",
+    "Stationary Riccati variance",
+    "Finite Monte Carlo calibration within five standard errors; no pathwise guarantee"
+  ]
+}

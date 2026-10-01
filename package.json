@@ -1,0 +1,16 @@
+{
+  "name": "rawlings-mpc-korean-study-notes",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Unofficial Korean MPC study notes and a self-contained GitHub Pages reading site",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "check": "python scripts/check.py",
+    "serve": "python scripts/serve.py"
+  },
+  "dependencies": {
+    "katex": "0.18.10",
+    "markdown-it": "15.0.2"
+  }
+}

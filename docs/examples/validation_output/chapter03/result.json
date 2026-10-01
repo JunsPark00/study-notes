@@ -1,0 +1,42 @@
+{
+  "chapter": 3,
+  "status": "passed",
+  "random_seed": 202603,
+  "units": "dimensionless state, input, disturbances; sample index time",
+  "scope": "Invariant scalar tube and a separate Gaussian risk illustration; no complete MPC design",
+  "bounded": {
+    "error_radius": 0.20000000000000007,
+    "nominal_state_limit": 2.8,
+    "nominal_input_limit": 0.88,
+    "initial_error_assumption": "abs(e0)<=0.2",
+    "checked_corner_images": [
+      -0.20000000000000007,
+      -5.551115123125783e-17,
+      5.551115123125783e-17,
+      0.20000000000000007
+    ],
+    "max_simulated_abs_state": 2.7,
+    "max_simulated_abs_input": 0.995
+  },
+  "gaussian": {
+    "horizon": 10,
+    "total_union_bound": 0.05,
+    "per_step_risk": 0.005,
+    "individual_5pct_quantile": 1.959963984540054,
+    "allocated_0_5pct_quantile": 2.807033768343811,
+    "sigma": 0.15,
+    "two_sided_margin": 0.4210550652515716,
+    "independent_exact_any_violation_probability": 0.048889869534228136,
+    "monte_carlo_any_violation_frequency": 0.0499,
+    "monte_carlo_samples": 100000,
+    "monte_carlo_standard_error": 0.0006819065199215673
+  },
+  "checks": [
+    "Interval-corner invariance",
+    "Analytic tightening 0.2 / 2.8 / 0.88",
+    "Finite bounded-noise trajectory constraints",
+    "Gaussian two-sided tail equals budget",
+    "Union bound needs no temporal independence",
+    "Independent Gaussian simulation is within five standard errors; not a safety proof"
+  ]
+}

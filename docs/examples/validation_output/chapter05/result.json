@@ -1,0 +1,101 @@
+{
+  "chapter": 5,
+  "status": "passed",
+  "random_seed": 20261005,
+  "checks": [
+    "Schur stable error dynamics",
+    "discrete Lyapunov residual below 1e-14",
+    "positive definite covariance",
+    "seeded covariance relative error below 3.5%",
+    "seeded RMS relative error below 2%",
+    "individual and coupled bounds contain trajectory",
+    "cross covariance is nonzero"
+  ],
+  "example": "coupled predictor-observer error covariance",
+  "units": "dimensionless; k is a discrete sample index",
+  "F": [
+    [
+      0.4,
+      0.0
+    ],
+    [
+      0.7,
+      0.6
+    ]
+  ],
+  "G": [
+    [
+      1.0,
+      -0.7
+    ],
+    [
+      0.0,
+      0.7
+    ]
+  ],
+  "noise": {
+    "distribution": "independent zero-mean uniform, iid in time",
+    "absolute_bounds_w_eta": [
+      0.02,
+      0.03
+    ],
+    "seed": 20261005
+  },
+  "simulation": {
+    "retained_samples": 160000,
+    "burn_in": 2000,
+    "initial_epsilon_e": [
+      0.0,
+      0.0
+    ],
+    "empirical_mean": [
+      -8.741037551594661e-06,
+      4.987930859745804e-05
+    ],
+    "empirical_covariance": [
+      [
+        0.0003322267343399235,
+        -7.10916750439876e-05
+      ],
+      [
+        -7.10916750439876e-05,
+        0.00038898838204745774
+      ]
+    ],
+    "empirical_rms_x_minus_z": 0.02406311406814901,
+    "covariance_relative_frobenius_error": 0.007830301327958191,
+    "max_observed_abs_x_minus_z": 0.0972412379657237
+  },
+  "stationary_covariance": [
+    [
+      0.00033373015873015876,
+      -7.04678362573099e-05
+    ],
+    [
+      -7.04678362573099e-05,
+      0.00039271061769005844
+    ]
+  ],
+  "lyapunov_residual_inf": 2.710505431213761e-20,
+  "variance_x_minus_z": 0.0005855051039055974,
+  "cross_covariance_contribution": -0.0001409356725146198,
+  "analytic_rms_x_minus_z": 0.0241972127300976,
+  "incorrect_rms_if_cross_covariance_ignored": 0.026952565303143543,
+  "bounds": {
+    "individual_epsilon_e": [
+      0.06833333333333333,
+      0.1720833333333333
+    ],
+    "interval_sum": 0.24041666666666664,
+    "coupled_directional_bound": 0.13541666666666669,
+    "finite_support_terms": 80,
+    "tail_upper_bound": 7.348622558867405e-19
+  },
+  "checks_passed": true,
+  "limitations": [
+    "No controller or full MPC optimization is implemented.",
+    "RMS is not a robust bound or Gaussian confidence interval.",
+    "Coupled bound requires zero initial errors or initialization in its invariant set.",
+    "Finite simulation is an empirical check, not a proof of all noise paths."
+  ]
+}

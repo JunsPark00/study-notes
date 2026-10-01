@@ -1,0 +1,528 @@
+[
+  {
+    "chapter": 1,
+    "id": "ch01_01_model",
+    "title": "이산 모델과 정확한 영차 유지",
+    "latex": [
+      "x_{k+1}=Ax_k+Bu_k,\\qquad y_k=Cx_k",
+      "A=e^{A_c\\Delta},\\qquad B=\\int_0^{\\Delta}e^{A_c\\tau}B_c\\,d\\tau",
+      "A_{\\mathrm{Euler}}=I+\\Delta A_c,\\qquad B_{\\mathrm{Euler}}=\\Delta B_c"
+    ],
+    "assumptions": [
+      "정확한 식은 각 샘플 구간에서 입력을 일정하게 유지할 때 성립",
+      "비교할 때 총 예측 시간 NΔ와 샘플 간격 Δ를 함께 확인"
+    ],
+    "caption": "정확한 영차 유지 이산화와 전진 Euler 근사의 차이",
+    "attribution": "수식 정리 카드 · 일반 수학·제어식을 새로 조판, 성립 가정은 본문 참조"
+  },
+  {
+    "chapter": 1,
+    "id": "ch01_02_lqr",
+    "title": "유한 구간 비용과 Riccati 재귀",
+    "latex": [
+      "J=\\frac{1}{2}\\sum_{j=0}^{N-1}(x_j^TQx_j+u_j^TRu_j)+\\frac{1}{2}x_N^TP_fx_N",
+      "K_j=-(R+B^TP_{j+1}B)^{-1}B^TP_{j+1}A",
+      "P_j=Q+A^TP_{j+1}A+A^TP_{j+1}BK_j",
+      "P_N=P_f,\\qquad u_j=K_jx_j"
+    ],
+    "assumptions": [
+      "Q, P_f는 대칭 양의 준정부호, R은 대칭 양의 정부호",
+      "여기서는 음의 부호가 K 안에 포함됨 · 구현은 역행렬 대신 선형계 풀이"
+    ],
+    "caption": "유한 구간 LQR의 비용과 뒤로 계산하는 Riccati 재귀",
+    "attribution": "수식 정리 카드 · 일반 수학·제어식을 새로 조판, 성립 가정은 본문 참조"
+  },
+  {
+    "chapter": 1,
+    "id": "ch01_03_kalman",
+    "title": "칼만 필터: 측정 갱신과 다음 예측",
+    "latex": [
+      "L=P^-C^T(CP^-C^T+V)^{-1}",
+      "\\hat{x}^{+}=\\hat{x}^{-}+L(y-C\\hat{x}^{-})",
+      "\\hat{x}_{k+1}^{-}=A\\hat{x}_{k}^{+}+Bu_k",
+      "P_{k+1}^{-}=AP_k^{+}A^T+W"
+    ],
+    "assumptions": [
+      "−는 측정 전, +는 측정 후 · W와 V는 과정·측정 잡음 공분산",
+      "선형 Gaussian 해석에는 알려진 공분산과 적절한 독립성 가정이 필요"
+    ],
+    "caption": "혁신으로 현재 추정을 보정한 뒤 동역학으로 다음 상태를 예측",
+    "attribution": "수식 정리 카드 · 일반 수학·제어식을 새로 조판, 성립 가정은 본문 참조"
+  },
+  {
+    "chapter": 1,
+    "id": "ch01_04_target",
+    "title": "정상 목표를 먼저 풀고 편차를 조절",
+    "latex": [
+      "(I-A)x_s-Bu_s=0,\\qquad HCx_s=r",
+      "\\tilde{x}=x-x_s,\\qquad\\tilde{u}=u-u_s",
+      "u_{\\min}-u_s\\ \\leq\\ \\tilde{u}\\ \\leq\\ u_{\\max}-u_s"
+    ],
+    "assumptions": [
+      "z=Hy가 제어할 출력 · 정상 목표는 상태·입력 제약 안에서 실행 가능해야 함",
+      "외란을 추정했다면 정상 목표 식에도 그 외란을 반영"
+    ],
+    "caption": "정상상태 목표 계산과 편차 입력 한계의 이동",
+    "attribution": "수식 정리 카드 · 일반 수학·제어식을 새로 조판, 성립 가정은 본문 참조"
+  },
+  {
+    "chapter": 2,
+    "id": "ch02_01_problem",
+    "title": "명목 MPC의 최적화 문제",
+    "latex": [
+      "V_N(x)=\\min_{u_0,\\ldots,u_{N-1}}\\left\\{\\sum_{j=0}^{N-1}\\ell(x_j,u_j)+V_f(x_N)\\right\\}",
+      "x_0=x,\\qquad x_{j+1}=f(x_j,u_j)",
+      "(x_j,u_j)\\in Z,\\qquad x_N\\in X_f"
+    ],
+    "assumptions": [
+      "최적 입력 열 중 첫 입력만 적용하고 다음 상태에서 다시 최적화",
+      "명목 조건: 현재 상태를 알고, 실제 전이가 예측 모델과 일치"
+    ],
+    "caption": "상태·입력·종단 제약을 포함한 명목 MPC 문제",
+    "attribution": "수식 정리 카드 · 일반 수학·제어식을 새로 조판, 성립 가정은 본문 참조"
+  },
+  {
+    "chapter": 2,
+    "id": "ch02_02_predecessor",
+    "title": "실행 가능 집합을 뒤에서부터 계산",
+    "latex": [
+      "X_0=X_f",
+      "X_{j+1}=\\{x:\\ \\exists u,\\ (x,u)\\in Z,\\ f(x,u)\\in X_j\\}",
+      "r_0=0.5,\\qquad r_{j+1}=\\min\\left(4,\\frac{r_j+1}{1.1}\\right)"
+    ],
+    "assumptions": [
+      "스칼라 예: x⁺=1.1x+u, |x|≤4, |u|≤1, X_f=[−0.5,0.5]",
+      "종단 집합의 허용 불변성 아래 이전 계획 끝에 제어를 이어 붙일 수 있음"
+    ],
+    "caption": "전임 집합 재귀와 스칼라 실행 가능 반경의 손계산",
+    "attribution": "수식 정리 카드 · 일반 수학·제어식을 새로 조판, 성립 가정은 본문 참조"
+  },
+  {
+    "chapter": 2,
+    "id": "ch02_03_stability",
+    "title": "종단 감소에서 MPC 값 함수 감소로",
+    "latex": [
+      "f(x,\\kappa_f(x))\\in X_f,\\qquad (x,\\kappa_f(x))\\in Z",
+      "V_f(f(x,\\kappa_f(x)))-V_f(x)\\leq-\\ell(x,\\kappa_f(x))",
+      "V_N(x^+)-V_N(x)\\leq-\\ell(x,u_0^*)"
+    ],
+    "assumptions": [
+      "종단 조건은 모든 x∈X_f에서 확인 · 이동 후보가 다음 문제에 실행 가능해야 함",
+      "비용 감소에서 상태 수렴을 얻으려면 비용의 양의 성질 등 추가 조건이 필요"
+    ],
+    "caption": "종단 불변성·감소 조건과 이동 후보가 만드는 값 함수 감소",
+    "attribution": "수식 정리 카드 · 일반 수학·제어식을 새로 조판, 성립 가정은 본문 참조"
+  },
+  {
+    "chapter": 2,
+    "id": "ch02_04_economic",
+    "title": "경제적 비용을 변환할 때 남는 종단 항",
+    "latex": [
+      "L(x,u)=\\ell(x,u)-\\ell(x_s,u_s)+\\lambda(x)-\\lambda(f(x,u))",
+      "\\sum_{j=0}^{N-1}L_j=\\sum_{j=0}^{N-1}\\ell_j-N\\ell_s+\\lambda(x_0)-\\lambda(x_N)",
+      "\\lambda(x)=4x\\quad\\Longrightarrow\\quad L=0.5(x-2)^2+0.2(u-2)^2"
+    ],
+    "assumptions": [
+      "예: x⁺=0.8x+0.2u, ℓ=0.5x²+0.2u²−2.8x, (x_s,u_s)=(2,2)",
+      "자유 종단에서 원래 최적해를 유지하려면 변환 목적에 +λ(x_N)을 보정"
+    ],
+    "caption": "경제 비용의 회전 변환과 자유 종단 보정의 부호",
+    "attribution": "수식 정리 카드 · 일반 수학·제어식을 새로 조판, 성립 가정은 본문 참조"
+  },
+  {
+    "chapter": 3,
+    "id": "ch03_01_error_bound",
+    "title": "유계 외란이 남기는 잔여 오차",
+    "latex": [
+      "e_{k+1}=\\rho e_k+w_k,\\qquad |\\rho|<1,\\quad |w_k|\\leq\\bar{w}",
+      "|e_k|\\leq |\\rho|^k|e_0|+\\bar{w}\\frac{1-|\\rho|^k}{1-|\\rho|}",
+      "s=\\frac{\\bar{w}}{1-|\\rho|}"
+    ],
+    "assumptions": [
+      "첫 항은 초기 오차, 두 번째 항은 계속 유입되는 외란의 누적 영향",
+      "지속 외란 아래의 유계성은 원점으로 정확히 수렴한다는 뜻과 다름"
+    ],
+    "caption": "스칼라 안정 오차계의 순간 상한과 불변 반경",
+    "attribution": "수식 정리 카드 · 일반 수학·제어식을 새로 조판, 성립 가정은 본문 참조"
+  },
+  {
+    "chapter": 3,
+    "id": "ch03_02_tube",
+    "title": "튜브 MPC: 오차 불변성과 제약 축소",
+    "latex": [
+      "z_{k+1}=Az_k+Bv_k,\\qquad u_k=v_k+K(x_k-z_k)",
+      "e_k=x_k-z_k,\\qquad e_{k+1}=(A+BK)e_k+w_k",
+      "(A+BK)S\\oplus W\\subseteq S",
+      "z_k\\in X\\ominus S,\\qquad v_k\\in U\\ominus KS"
+    ],
+    "assumptions": [
+      "초기 오차 e₀∈S, 외란 w∈W, 축소 문제의 실행 가능성과 종단 설계가 필요",
+      "⊕는 Minkowski 합 · ⊖는 모든 허용 오차를 견디는 중심들의 집합"
+    ],
+    "caption": "실제 상태를 명목 중심과 불변 오차 집합으로 감싸는 튜브 구조",
+    "attribution": "수식 정리 카드 · 일반 수학·제어식을 새로 조판, 성립 가정은 본문 참조"
+  },
+  {
+    "chapter": 3,
+    "id": "ch03_03_chance",
+    "title": "가우스 여유와 구간 전체 위험 배분",
+    "latex": [
+      "\\sigma_{j+1}^2=\\rho^2\\sigma_j^2+\\sigma_w^2",
+      "m_j=\\Phi^{-1}(1-\\varepsilon_j/2)\\sigma_j",
+      "\\mathbb{P}(|e_j|>m_j)\\leq\\varepsilon_j",
+      "\\mathbb{P}\\!\\left(\\bigcup_j\\{|e_j|>m_j\\}\\right)\\leq\\sum_j\\varepsilon_j\\leq\\varepsilon"
+    ],
+    "assumptions": [
+      "여유 공식: 영평균 Gaussian 초기 오차와 독립 Gaussian 과정 잡음",
+      "마지막 합집합 상계에는 시점 간 독립성이 필요하지 않음"
+    ],
+    "caption": "개별 시점 양측 가우스 제약과 전체 예측 구간의 위험 한도",
+    "attribution": "수식 정리 카드 · 일반 수학·제어식을 새로 조판, 성립 가정은 본문 참조"
+  },
+  {
+    "chapter": 3,
+    "id": "ch03_04_sampling",
+    "title": "표본 설계 신뢰도와 무위반 검증",
+    "latex": [
+      "\\beta_{\\mathrm{fail}}=(1-\\varepsilon)^M",
+      "M\\geq\\left\\lceil\\frac{\\log\\beta}{\\log(1-\\varepsilon)}\\right\\rceil",
+      "\\varepsilon=0.05,\\ \\beta=0.01\\quad\\Longrightarrow\\quad M=90",
+      "0\\ \\mathrm{violations\\ in}\\ n=100:\\quad p_{\\mathrm{upper}}=1-0.05^{1/100}\\simeq 2.95\\%"
+    ],
+    "assumptions": [
+      "위 두 식: 연속 분포의 독립·동일분포 경로 최대값을 여유로 고르는 특별한 설계",
+      "마지막 식: 고정 설계를 독립 검증한 95% 단측 이항 상한 · 일반 시나리오 공식 아님"
+    ],
+    "caption": "실제 위반율 ε, 설계 실패확률 β, 검증 신뢰상한을 구별",
+    "attribution": "수식 정리 카드 · 일반 수학·제어식을 새로 조판, 성립 가정은 본문 참조"
+  },
+  {
+    "chapter": 4,
+    "id": "ch04_01_fie",
+    "title": "전체 정보 추정의 가중 최소제곱",
+    "latex": [
+      "J=\\|\\xi_0-m_0\\|_{P_0^{-1}}^2",
+      "\\quad+\\sum_{j=0}^{T-1}\\left[\\|\\xi_{j+1}-A\\xi_j-Bu_j\\|_{Q_w^{-1}}^2+\\|y_j-C\\xi_j\\|_{R_v^{-1}}^2\\right]",
+      "\\|r\\|_M^2=r^TMr"
+    ],
+    "assumptions": [
+      "예측형: y₀,…,y_(T−1)로 x_T를 추정 · u는 실제 적용한 입력",
+      "선형·무제약·Gaussian 조건과 같은 정보 시점이면 끝 상태가 칼만 추정과 일치"
+    ],
+    "caption": "초기 사전, 과정 잔차, 측정 잔차를 공분산으로 가중한 FIE 비용",
+    "attribution": "수식 정리 카드 · 일반 수학·제어식을 새로 조판, 성립 가정은 본문 참조"
+  },
+  {
+    "chapter": 4,
+    "id": "ch04_02_joseph",
+    "title": "칼만 갱신과 Joseph 공분산",
+    "latex": [
+      "S=CP^-C^T+R_v,\\qquad L=P^-C^TS^{-1}",
+      "m^+=m^-+L(y-Cm^-)",
+      "P^+=(I-LC)P^-(I-LC)^T+LR_vL^T",
+      "m_{k+1}^-=Am_k^++Bu_k,\\qquad P_{k+1}^-=AP_k^+A^T+Q_w"
+    ],
+    "assumptions": [
+      "S는 혁신 공분산 · Joseph 형태는 수치 대칭성과 양의 성질을 보호하는 데 유용",
+      "역행렬 표기는 이론 표현 · 구현에서는 선형계 풀이를 우선"
+    ],
+    "caption": "측정 보정, Joseph 공분산 갱신, 다음 시점 예측의 순서",
+    "attribution": "수식 정리 카드 · 일반 수학·제어식을 새로 조판, 성립 가정은 본문 참조"
+  },
+  {
+    "chapter": 4,
+    "id": "ch04_03_arrival",
+    "title": "MHE의 도착 비용은 창 밖 과거 정보",
+    "latex": [
+      "s=\\max(0,T-N)",
+      "J=\\Gamma_s(\\xi_s)+\\sum_{j=s}^{T-1}\\left[\\|\\xi_{j+1}-A\\xi_j-Bu_j\\|_{Q_w^{-1}}^2+\\|y_j-C\\xi_j\\|_{R_v^{-1}}^2\\right]",
+      "\\Gamma_s(\\xi_s)=\\|\\xi_s-m_s^-\\|_{(P_s^-)^{-1}}^2+\\mathrm{constant}",
+      "H_{\\mathrm{arrival}}=H_{qq}-H_{qp}H_{pp}^{-1}H_{pq}"
+    ],
+    "assumptions": [
+      "정확한 이차 도착 비용: 선형·무제약·Gaussian 조건",
+      "m_s⁻와 P_s⁻에는 y₀,…,y_(s−1)만 사용 · 창 안 측정을 중복 반영하지 않기"
+    ],
+    "caption": "MHE 목적함수, 정확한 칼만 예측 사전, Schur 보완의 연결",
+    "attribution": "수식 정리 카드 · 일반 수학·제어식을 새로 조판, 성립 가정은 본문 참조"
+  },
+  {
+    "chapter": 4,
+    "id": "ch04_04_consistency",
+    "title": "추정 평균과 불확실성을 따로 검증",
+    "latex": [
+      "\\nu=y-Cm^-,\\qquad S=CP^-C^T+R_v",
+      "\\mathrm{NIS}=\\frac{\\nu^2}{S},\\qquad\\mathrm{NEES}=\\frac{(x-m^+)^2}{P^+}",
+      "\\mathrm{NIS},\\ \\mathrm{NEES}\\sim\\chi_1^2,\\qquad\\mathbb{E}[\\mathrm{NIS}]=\\mathbb{E}[\\mathrm{NEES}]=1"
+    ],
+    "assumptions": [
+      "스칼라·정확한 선형 Gaussian 모델·사전·독립 잡음 조건에서의 주변 분포",
+      "NEES는 참 상태가 필요 · 시간 상관 표본을 독립으로 세거나 두 지표의 독립성을 가정하지 않기"
+    ],
+    "caption": "스칼라 NIS와 NEES로 보고된 공분산의 일관성을 점검",
+    "attribution": "수식 정리 카드 · 일반 수학·제어식을 새로 조판, 성립 가정은 본문 참조"
+  },
+  {
+    "chapter": 5,
+    "id": "ch05_01_errors",
+    "title": "세 상태를 연결하는 두 오차",
+    "latex": [
+      "\\varepsilon=x-\\hat{x},\\qquad e=\\hat{x}-z,\\qquad x=z+e+\\varepsilon",
+      "\\hat{x}^{+}=A\\hat{x}+Bu+L(y-C\\hat{x}),\\quad z^+=Az+Bv,\\quad u=v+Ke",
+      "\\varepsilon^+=(A-LC)\\varepsilon+w-L\\eta",
+      "e^+=(A+BK)e+L(C\\varepsilon+\\eta)"
+    ],
+    "assumptions": [
+      "예측형 관측기: 현재 입력 계산 뒤 y_k로 다음 추정치 갱신",
+      "실제 입력의 보정은 Ke이며 Kε가 아님"
+    ],
+    "caption": "실제·추정·명목 상태와 추정 오차·추종 오차의 결합 동역학",
+    "attribution": "수식 정리 카드 · 일반 수학·제어식을 새로 조판, 성립 가정은 본문 참조"
+  },
+  {
+    "chapter": 5,
+    "id": "ch05_02_tightening",
+    "title": "두 겹 튜브의 상태·입력 여유",
+    "latex": [
+      "z\\in X\\ominus(S\\oplus\\Sigma),\\qquad v\\in U\\ominus KS",
+      "s_{\\varepsilon}=\\frac{0.02+0.7(0.03)}{1-0.4}=0.0683333",
+      "s_e=\\frac{0.7(s_{\\varepsilon}+0.03)}{1-0.6}=0.1720833",
+      "|z|\\leq2-s_{\\varepsilon}-s_e=1.7595833,\\quad |v|\\leq0.8-s_e=0.6279167"
+    ],
+    "assumptions": [
+      "스칼라 예: a=1.1, b=0.5, c=1, L=0.7, K=−1",
+      "초기 ε∈Σ, e∈S와 잡음 경계, 축소 문제 실행 가능성 및 종단 조건이 필요"
+    ],
+    "caption": "추정 오차와 추종 오차를 반영한 강인 제약 축소의 수치 예",
+    "attribution": "수식 정리 카드 · 일반 수학·제어식을 새로 조판, 성립 가정은 본문 참조"
+  },
+  {
+    "chapter": 5,
+    "id": "ch05_03_covariance",
+    "title": "오차가 상관되면 교차항을 남긴다",
+    "latex": [
+      "\\zeta=(\\varepsilon,e),\\qquad x-z=\\varepsilon+e",
+      "\\mathrm{Var}(x-z)=P_{11}+P_{22}+2P_{12}",
+      "\\mathrm{RMS}(x-z)\\simeq0.0242"
+    ],
+    "assumptions": [
+      "이 수치는 독립·영평균 균등 과정·측정 잡음의 정상상태 보충 예",
+      "평균 제곱 성능은 모든 외란 경로에 대한 강인 최대 오차가 아님"
+    ],
+    "caption": "공유 측정 잡음 때문에 두 오차 사이 공분산을 무시하면 안 됨",
+    "attribution": "수식 정리 카드 · 일반 수학·제어식을 새로 조판, 성립 가정은 본문 참조"
+  },
+  {
+    "chapter": 5,
+    "id": "ch05_04_offset",
+    "title": "외란 추정과 정상 목표 재계산",
+    "latex": [
+      "x_s=Ax_s+Bu_s+B_d\\hat{d}",
+      "x^+=0.8x+0.5u+d,\\qquad y=x,\\qquad r=1",
+      "\\hat{d}=0.12:\\quad x_s=1,\\quad u_s=\\frac{(1-0.8)\\cdot1-0.12}{0.5}=0.16",
+      "|u_s|\\leq0.8\\quad\\Longleftrightarrow\\quad |0.2r-\\hat{d}|\\leq0.4"
+    ],
+    "assumptions": [
+      "확장 검출가능성, 실행 가능한 목표, 목표 입력 중심 비용과 폐루프 수렴 조건이 필요",
+      "외란을 무시한 목표 입력은 0.4 · 외란 상태를 추가하는 것만으로 무오프셋 보장 안 됨"
+    ],
+    "caption": "외란이 만드는 유지 입력 변화를 정상상태 식으로 계산",
+    "attribution": "수식 정리 카드 · 일반 수학·제어식을 새로 조판, 성립 가정은 본문 참조"
+  },
+  {
+    "chapter": 6,
+    "id": "ch06_01_qp",
+    "title": "분산 계산의 공통 출발점: 축약 QP",
+    "latex": [
+      "J(U;x)=\\frac{1}{2}U^THU+(Fx)^TU+\\frac{1}{2}x^TYx",
+      "HU^*=-Fx\\qquad(H\\succ0,\\ \\mathrm{unconstrained})",
+      "e^{p+1}=Te^p:\\ \\rho(T)<1",
+      "x^+=(A+BK)x:\\ \\rho(A+BK)<1"
+    ],
+    "assumptions": [
+      "p는 같은 물리 시점의 최적화 반복 · k는 공정의 실제 시간",
+      "반복 수렴 행렬 T와 실제 폐루프 행렬 A+BK는 별도로 검사"
+    ],
+    "caption": "축약 이차 비용과 계산 수렴·제어 안정성의 서로 다른 판정",
+    "attribution": "수식 정리 카드 · 일반 수학·제어식을 새로 조판, 성립 가정은 본문 참조"
+  },
+  {
+    "chapter": 6,
+    "id": "ch06_02_cooperation",
+    "title": "협조 갱신은 전체 후보를 평균",
+    "latex": [
+      "V_1=(U_1^*,U_2^p),\\qquad V_2=(U_1^p,U_2^*)",
+      "U^{p+1}=\\omega_1V_1+\\omega_2V_2,\\quad\\omega_i>0,\\quad\\sum_i\\omega_i=1",
+      "J(U^{p+1})\\leq\\sum_i\\omega_iJ(V_i)\\leq J(U^p)"
+    ],
+    "assumptions": [
+      "같은 이전 계획을 기준으로 각 후보가 실행 가능하고 비용을 낮춰야 함",
+      "볼록 비용과 볼록 허용 집합이 필요 · 새 블록을 그대로 붙이는 갱신과 다름"
+    ],
+    "caption": "전체 실행 가능 후보의 볼록 결합이 보존하는 비용 감소",
+    "attribution": "수식 정리 카드 · 일반 수학·제어식을 새로 조판, 성립 가정은 본문 참조"
+  },
+  {
+    "chapter": 6,
+    "id": "ch06_03_certificate",
+    "title": "중앙집중 최적해 없이 비용 오차 인증",
+    "latex": [
+      "U\\in[-l,l]^n,\\qquad f\\ \\mathrm{convex\\ and\\ differentiable}",
+      "0\\leq f(U)-f^*\\leq g(U)",
+      "g(U)=\\nabla f(U)^TU+l\\|\\nabla f(U)\\|_1"
+    ],
+    "assumptions": [
+      "정확한 전체 기울기와 실행 가능한 U가 필요 · 이 식은 대칭 상자 제약용",
+      "목적함수 오차의 상한이며 첫 입력 오차·제어 안정성·통신 지연의 인증이 아님"
+    ],
+    "caption": "볼록 비용의 접평면 하한에서 얻는 상자 제약 최적성 오차 인증",
+    "attribution": "수식 정리 카드 · 일반 수학·제어식을 새로 조판, 성립 가정은 본문 참조"
+  },
+  {
+    "chapter": 6,
+    "id": "ch06_04_shift",
+    "title": "유한 반복 MPC는 시간 사이를 연결",
+    "latex": [
+      "J(U_{\\mathrm{warm}};x^+)\\leq J(U;x)-\\ell(x,u)",
+      "J(U_{\\mathrm{new}};x^+)\\leq J(U_{\\mathrm{warm}};x^+)",
+      "J(U_{\\mathrm{new}};x^+)\\leq J(U;x)-\\ell(x,u)"
+    ],
+    "assumptions": [
+      "이동한 계획 끝에 적절한 종단 정책을 붙여 실행 가능한 시작점을 구성",
+      "재귀적 실행 가능성·종단 감소·비용의 양의 성질·제어기 기억을 함께 분석"
+    ],
+    "caption": "이동 초기화의 시간 간 감소와 분산 반복의 개선을 결합",
+    "attribution": "수식 정리 카드 · 일반 수학·제어식을 새로 조판, 성립 가정은 본문 참조"
+  },
+  {
+    "chapter": 7,
+    "id": "ch07_01_parametric",
+    "title": "상태가 파라미터인 이차계획",
+    "latex": [
+      "X=S_xx+S_uU",
+      "\\min_U\\ J(U,x)=\\frac{1}{2}U^THU+U^TFx+\\frac{1}{2}x^TYx",
+      "GU\\leq Wx+b,\\qquad H\\succ0"
+    ],
+    "assumptions": [
+      "x는 현재 상태 파라미터, U는 미래 입력 열 결정 변수",
+      "실행 가능한 각 x에서 U의 최적해는 유일 · 마지막 항은 값 함수 계산에 필요"
+    ],
+    "caption": "선형 MPC를 상태 파라미터를 갖는 엄격 볼록 QP로 축약",
+    "attribution": "수식 정리 카드 · 일반 수학·제어식을 새로 조판, 성립 가정은 본문 참조"
+  },
+  {
+    "chapter": 7,
+    "id": "ch07_02_kkt",
+    "title": "활성 집합을 고정하면 아핀 해",
+    "latex": [
+      "HU+Fx+G_I^T\\lambda_I=0,\\qquad G_IU=W_Ix+b_I",
+      "U=K_Ix+k_I,\\qquad\\lambda_I=L_Ix+l_I",
+      "G(K_Ix+k_I)\\leq Wx+b,\\qquad L_Ix+l_I\\geq0"
+    ],
+    "assumptions": [
+      "H는 양의 정부호, 활성 행 G_I는 선형 독립일 때 결합 선형계를 풂",
+      "원래 파라미터 범위까지 교차해 유효한 임계 영역을 구성"
+    ],
+    "caption": "KKT 선형계에서 아핀 입력·승수와 임계 영역의 부등식을 유도",
+    "attribution": "수식 정리 카드 · 일반 수학·제어식을 새로 조판, 성립 가정은 본문 참조"
+  },
+  {
+    "chapter": 7,
+    "id": "ch07_03_piecewise",
+    "title": "세 영역의 명시적 입력과 최적 비용",
+    "latex": [
+      "J(u,x)=x^2+xu+\\frac{1}{2}u^2,\\qquad -1\\leq u\\leq1",
+      "x<-1:\\quad u^*=1,\\qquad V=x^2+x+\\frac{1}{2}",
+      "-1\\leq x\\leq1:\\quad u^*=-x,\\qquad V=\\frac{1}{2}x^2",
+      "x>1:\\quad u^*=-1,\\qquad V=x^2-x+\\frac{1}{2}"
+    ],
+    "assumptions": [
+      "이 스칼라 구조에서는 무제약 해의 포화가 정확한 최적해",
+      "여러 입력·상태 제약이 결합된 일반 MPC에서는 성분별 clipping이 최적이 아님"
+    ],
+    "caption": "구간별 아핀 제어와 구간별 이차 값 함수의 손계산 예",
+    "attribution": "수식 정리 카드 · 일반 수학·제어식을 새로 조판, 성립 가정은 본문 참조"
+  },
+  {
+    "chapter": 7,
+    "id": "ch07_04_sensitivity",
+    "title": "같은 영역 안에서의 측정 민감도",
+    "latex": [
+      "a_j^Tx\\leq b_j,\\qquad r=\\min_{j:a_j\\ne0}\\frac{b_j-a_j^T\\bar{x}}{\\|a_j\\|_2}",
+      "\\|e\\|_2\\leq r\\quad\\Longrightarrow\\quad \\bar{x}+e\\ \\mathrm{stays\\ in\\ the\\ region}",
+      "u_0=k_I^Tx+c_I,\\quad\\Delta u_0=k_I^Te,\\quad|\\Delta u_0|\\leq\\|k_I\\|_2\\|e\\|_2"
+    ],
+    "assumptions": [
+      "현재 영역의 내부점 x̄와 영이 아닌 법선에 대해 계산",
+      "영역 유지·입력 민감도 설명이며 실제 상태의 강인 제약 만족 보장은 아님"
+    ],
+    "caption": "다면체 경계까지 거리와 같은 아핀 입력 식의 오차 상한",
+    "attribution": "수식 정리 카드 · 일반 수학·제어식을 새로 조판, 성립 가정은 본문 참조"
+  },
+  {
+    "chapter": 8,
+    "id": "ch08_01_rk4",
+    "title": "RK4의 네 기울기와 한 단계 전이",
+    "latex": [
+      "k_1=f(x,u),\\qquad k_2=f(x+hk_1/2,u)",
+      "k_3=f(x+hk_2/2,u),\\qquad k_4=f(x+hk_3,u)",
+      "x^+=x+\\frac{h}{6}(k_1+2k_2+2k_3+k_4)"
+    ],
+    "assumptions": [
+      "한 구간에서 u는 일정 · k₁,…,k₄는 입력이 아니라 중간 기울기",
+      "충분히 매끄러운 문제에서 고정 구간 전역 오차 O(h⁴) · 비용 구적도 따로 맞춰야 함"
+    ],
+    "caption": "상수 입력 구간의 고전적 4차 Runge–Kutta 적분",
+    "attribution": "수식 정리 카드 · 일반 수학·제어식을 새로 조판, 성립 가정은 본문 참조"
+  },
+  {
+    "chapter": 8,
+    "id": "ch08_02_sqp",
+    "title": "SQP: 현재 반복점에서 국소 QP",
+    "latex": [
+      "\\min_d\\ \\frac{1}{2}d^TBd+\\nabla J(w)^Td",
+      "c(w)+J_c(w)d=0",
+      "g(w)+J_g(w)d\\leq0",
+      "B\\simeq\\nabla_{ww}^2\\mathcal{L},\\qquad\\mathcal{L}=J+\\lambda^Tc+\\mu^Tg"
+    ],
+    "assumptions": [
+      "B는 라그랑지안 Hessian 또는 근사 · 비용 Hessian만과 다를 수 있음",
+      "선형화 제약 만족이 w+d의 원래 비선형 제약 만족을 보장하지 않음"
+    ],
+    "caption": "선형화 제약과 라그랑지안 곡률을 쓰는 SQP 하위 문제",
+    "attribution": "수식 정리 카드 · 일반 수학·제어식을 새로 조판, 성립 가정은 본문 참조"
+  },
+  {
+    "chapter": 8,
+    "id": "ch08_03_gauss_newton",
+    "title": "Gauss–Newton이 생략하는 곡률 항",
+    "latex": [
+      "J(w)=\\frac{1}{2}\\|r(w)\\|^2",
+      "\\nabla^2J(w)=J_r(w)^TJ_r(w)+\\sum_i r_i(w)\\nabla^2r_i(w)",
+      "B_{\\mathrm{GN}}=J_r(w)^TJ_r(w)\\succeq0"
+    ],
+    "assumptions": [
+      "Gauss–Newton은 잔차로 가중된 두 번째 곡률 항을 생략",
+      "양의 준정부호 구조가 장점이지만 큰 잔차·중요한 곡률에서는 정확한 Hessian과 다를 수 있음"
+    ],
+    "caption": "최소제곱 목적의 정확한 Hessian과 Gauss–Newton 근사를 비교",
+    "attribution": "수식 정리 카드 · 일반 수학·제어식을 새로 조판, 성립 가정은 본문 참조"
+  },
+  {
+    "chapter": 8,
+    "id": "ch08_04_taylor",
+    "title": "Taylor 잔차로 도함수를 독립 검사",
+    "latex": [
+      "R_0(h)=|J(w+hd)-J(w)|",
+      "R_1(h)=|J(w+hd)-J(w)-h\\nabla J(w)^Td|",
+      "R_0(h)=O(h),\\qquad R_1(h)=O(h^2)",
+      "R_1(h/2)\\approx\\frac{1}{4}R_1(h)"
+    ],
+    "assumptions": [
+      "매끄러운 비최적점·여러 방향 d로 검사 · R₀의 1차 경향에는 영이 아닌 방향 미분 필요",
+      "너무 작은 h에서는 반올림 오차가 지배 · 통과해도 전역 최적성 검증은 아님"
+    ],
+    "caption": "올바른 기울기를 뺀 잔차가 2차로 줄어드는 구간을 확인",
+    "attribution": "수식 정리 카드 · 일반 수학·제어식을 새로 조판, 성립 가정은 본문 참조"
+  }
+]

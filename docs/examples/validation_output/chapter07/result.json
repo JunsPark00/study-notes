@@ -1,0 +1,106 @@
+{
+  "chapter": 7,
+  "example": "scalar explicit parametric QP",
+  "status": "passed",
+  "random_seed": null,
+  "checks": [
+    "independent scalar optimizer agreement on 407 sample parameters",
+    "primal and dual feasibility",
+    "KKT stationarity and complementarity",
+    "piecewise value equals objective at explicit input",
+    "closed-region perturbations follow regional affine law",
+    "one-sided input slopes change at both boundaries",
+    "value derivative remains continuous at both boundaries in this example"
+  ],
+  "units": "dimensionless",
+  "cost": "J(u,x)=x^2+x*u+0.5*u^2",
+  "input_bounds": [
+    -1.0,
+    1.0
+  ],
+  "feasible_parameter_set": "all real x",
+  "regions": [
+    {
+      "condition": "x < -1",
+      "u": "1",
+      "value": "x^2+x+0.5"
+    },
+    {
+      "condition": "-1 <= x <= 1",
+      "u": "-x",
+      "value": "0.5*x^2"
+    },
+    {
+      "condition": "x > 1",
+      "u": "-1",
+      "value": "x^2-x+0.5"
+    }
+  ],
+  "sample_count": 407,
+  "max_input_difference_vs_scalar_optimizer": 1.4461923103503693e-08,
+  "max_value_difference_vs_scalar_optimizer": 5.551115123125783e-17,
+  "kkt_stationarity_residual_inf": 0.0,
+  "kkt_complementarity_residual_inf": 0.0,
+  "sensitivity_examples": [
+    {
+      "x": -1.6,
+      "closed_region_boundary_distance": 0.6000000000000001,
+      "regional_input_slope": 0.0,
+      "max_affine_prediction_residual": 0.0
+    },
+    {
+      "x": 0.4,
+      "closed_region_boundary_distance": 0.6,
+      "regional_input_slope": -1.0,
+      "max_affine_prediction_residual": 0.0
+    },
+    {
+      "x": 1.6,
+      "closed_region_boundary_distance": 0.6000000000000001,
+      "regional_input_slope": 0.0,
+      "max_affine_prediction_residual": 0.0
+    },
+    {
+      "x": 1.0,
+      "closed_region_boundary_distance": 0.0,
+      "regional_input_slope": -1.0,
+      "max_affine_prediction_residual": 0.0
+    }
+  ],
+  "boundary_one_sided_slopes": [
+    {
+      "x": -1.0,
+      "left_input_slope": 0.0,
+      "right_input_slope": -1.0000000000287557
+    },
+    {
+      "x": 1.0,
+      "left_input_slope": -1.0000000000287557,
+      "right_input_slope": 0.0
+    }
+  ],
+  "sample_solutions": [
+    {
+      "x": -1.4,
+      "u": 1.0,
+      "value": 1.0599999999999998
+    },
+    {
+      "x": 0.4,
+      "u": -0.4,
+      "value": 0.08000000000000002
+    },
+    {
+      "x": 1.6,
+      "u": -1.0,
+      "value": 1.4600000000000004
+    }
+  ],
+  "checks_passed": true,
+  "limitations": [
+    "No multi-step dynamics or general explicit MPC region solver is implemented.",
+    "Input clipping is exact here but is not generally a constrained MPC solution.",
+    "Region distance concerns the selected law, not robust closed-loop safety.",
+    "The grid is an implementation check, not a substitute for the analytic KKT argument."
+  ]
+}

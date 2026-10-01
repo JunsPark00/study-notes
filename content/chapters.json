@@ -1,0 +1,58 @@
+[
+  {
+    "number": 1,
+    "title": "MPC 시작하기",
+    "file": "chapters/chapter01.md",
+    "diagram_count": 2,
+    "formula_card_count": 4
+  },
+  {
+    "number": 2,
+    "title": "명목 MPC: 제약과 안정성",
+    "file": "chapters/chapter02.md",
+    "diagram_count": 2,
+    "formula_card_count": 4
+  },
+  {
+    "number": 3,
+    "title": "강인·확률적 MPC",
+    "file": "chapters/chapter03.md",
+    "diagram_count": 2,
+    "formula_card_count": 4
+  },
+  {
+    "number": 4,
+    "title": "상태 추정과 MHE",
+    "file": "chapters/chapter04.md",
+    "diagram_count": 2,
+    "formula_card_count": 4
+  },
+  {
+    "number": 5,
+    "title": "출력 피드백 MPC",
+    "file": "chapters/chapter05.md",
+    "diagram_count": 2,
+    "formula_card_count": 4
+  },
+  {
+    "number": 6,
+    "title": "분산 MPC",
+    "file": "chapters/chapter06.md",
+    "diagram_count": 2,
+    "formula_card_count": 4
+  },
+  {
+    "number": 7,
+    "title": "명시적 MPC",
+    "file": "chapters/chapter07.md",
+    "diagram_count": 2,
+    "formula_card_count": 4
+  },
+  {
+    "number": 8,
+    "title": "수치 최적 제어",
+    "file": "chapters/chapter08.md",
+    "diagram_count": 3,
+    "formula_card_count": 4
+  }
+]

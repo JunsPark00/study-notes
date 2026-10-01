@@ -1,0 +1,222 @@
+{
+  "chapter": 8,
+  "example": "Euler/RK4 fixed-time error and quadratic Taylor check",
+  "status": "passed",
+  "random_seed": null,
+  "checks": [
+    "Euler and RK4 fixed-time errors decrease under mesh refinement",
+    "final Euler order between 0.98 and 1.05",
+    "final RK4 order between 3.95 and 4.1",
+    "one-interval Euler state and quadratic objective agree with direct algebra",
+    "correct Taylor residual order near 2 in two directions",
+    "deliberately wrong Taylor residual order near 1 in two directions",
+    "independent central difference agrees with correct gradient"
+  ],
+  "units": {
+    "time": "seconds",
+    "state_input_cost": "dimensionless normalized quantities",
+    "taylor_h": "dimensionless input perturbation; not the integration time step"
+  },
+  "integration": {
+    "model": "dx/dt=-x+u",
+    "initial_state": 1.0,
+    "constant_input": -1.0,
+    "final_time_seconds": 1.0,
+    "step_counts": [
+      5,
+      10,
+      20,
+      40,
+      80
+    ],
+    "step_sizes_seconds": [
+      0.2,
+      0.1,
+      0.05,
+      0.025,
+      0.0125
+    ],
+    "exact_final_state": -0.26424111765711533,
+    "euler_final_states": [
+      -0.34464000000000006,
+      -0.3026431198,
+      -0.2830281551829156,
+      -0.2735351202242388,
+      -0.2688637119057661
+    ],
+    "rk4_final_states": [
+      -0.264229523749396,
+      -0.2642404511750031,
+      -0.2642410777049207,
+      -0.26424111521163157,
+      -0.26424111750585716
+    ],
+    "euler_errors": [
+      0.08039888234288473,
+      0.038402002142884695,
+      0.018787037525800243,
+      0.009294002567123483,
+      0.0046225942486507465
+    ],
+    "rk4_errors": [
+      1.1593907719320562e-05,
+      6.664821122215336e-07,
+      3.9952194608172675e-08,
+      2.4454837599385826e-09,
+      1.512581726537121e-10
+    ],
+    "euler_orders": [
+      1.0659939162002974,
+      1.0314439396218529,
+      1.015365641786631,
+      1.0075973087453935
+    ],
+    "rk4_orders": [
+      4.120656942341532,
+      4.060219496287473,
+      4.030082964684575,
+      4.015034883918876
+    ]
+  },
+  "one_interval_example": {
+    "h_seconds": 0.1,
+    "euler_state": 0.8,
+    "exact_state": 0.809674836071919,
+    "rk4_state": 0.809675,
+    "euler_absolute_error": 0.00967483607191899,
+    "constrained_quadratic_optimal_input": -1.0,
+    "discrete_optimal_cost": 0.32500000000000007
+  },
+  "taylor": {
+    "cost": "0.405+0.09*u+0.01*u^2",
+    "test_point": 0.0,
+    "correct_gradient": 0.09,
+    "deliberately_wrong_gradient": 0.08,
+    "central_difference_gradient": 0.090000000002588,
+    "central_difference_step": 1e-05,
+    "perturbations": [
+      0.1,
+      0.056234132519034905,
+      0.03162277660168379,
+      0.01778279410038923,
+      0.01,
+      0.005623413251903491,
+      0.0031622776601683794,
+      0.0017782794100389228,
+      0.001,
+      0.0005623413251903491,
+      0.00031622776601683794,
+      0.00017782794100389227,
+      0.0001
+    ],
+    "directions": [
+      {
+        "direction": 1.0,
+        "correct_order": 2.0000000036631307,
+        "wrong_order": 1.009927825622788,
+        "uncorrected_residuals": [
+          0.009099999999999997,
+          0.005092694703314804,
+          0.0028560498941515577,
+          0.0016036137466952094,
+          0.0009009999999999851,
+          0.0005064234204373297,
+          0.0002847049894151299,
+          0.00016007676968010642,
+          9.000999999997372e-05,
+          5.0613881544814276e-05,
+          2.846149894153438e-05,
+          1.600483091812599e-05,
+          9.00009999998952e-06
+        ],
+        "correct_residuals": [
+          9.999999999999766e-05,
+          3.1622776601662565e-05,
+          1.0000000000016506e-05,
+          3.1622776601788333e-06,
+          9.999999999851707e-07,
+          3.1622776601556313e-07,
+          9.999999997577051e-08,
+          3.162277660337235e-08,
+          9.999999973730024e-09,
+          3.1622776828615353e-09,
+          1.0000000189655663e-09,
+          3.1622777568515574e-10,
+          9.999998951903358e-11
+        ],
+        "wrong_residuals": [
+          0.0010999999999999968,
+          0.0005939641017920112,
+          0.00032622776601685423,
+          0.00018099021866407102,
+          0.00010099999999998511,
+          5.6550360285050375e-05,
+          3.172277660165953e-05,
+          1.781441687699259e-05,
+          1.0009999999973716e-05,
+          5.626575529586347e-06,
+          3.163277660187343e-06,
+          1.778595637814608e-06,
+          1.000099999989518e-06
+        ]
+      },
+      {
+        "direction": -0.7,
+        "correct_order": 1.9999999880187223,
+        "wrong_order": 0.9925971682081128,
+        "uncorrected_residuals": [
+          0.006250999999999951,
+          0.00352725518816438,
+          0.0019873349259060813,
+          0.0011187665122710522,
+          0.0006295099999999998,
+          0.0003541200832645752,
+          0.0001991744925906036,
+          0.0001120161076719195,
+          6.299509999996289e-05,
+          3.542595397093562e-05,
+          1.9921859259086627e-05,
+          1.1203005331639204e-05,
+          6.2999509999883685e-06
+        ],
+        "correct_residuals": [
+          4.900000000004814e-05,
+          1.5495160534818864e-05,
+          4.899999999997354e-06,
+          1.5495160534690494e-06,
+          4.900000000001258e-07,
+          1.5495160534463896e-07,
+          4.900000000426807e-08,
+          1.5495160532631594e-08,
+          4.900000037097235e-09,
+          1.5495160563653329e-09,
+          4.899999741625038e-10,
+          1.5495160600821135e-10,
+          4.9000011631326705e-11
+        ],
+        "wrong_residuals": [
+          0.0006509999999999511,
+          0.0003781437670984252,
+          0.00021645943621178892,
+          0.00012293004264925527,
+          6.950999999999984e-05,
+          3.9208941157979724e-05,
+          2.2086943621174354e-05,
+          1.2432460709739813e-05,
+          6.99509999996289e-06,
+          3.934839760276074e-06,
+          2.2131043621437038e-06,
+          1.244640635421238e-06,
+          6.999509999883679e-07
+        ]
+      }
+    ]
+  },
+  "checks_passed": true,
+  "limitations": [
+    "Observed orders apply to this smooth constant-input scalar ODE.",
+    "Accurate optimization cannot remove integration/model errors.",
+    "Taylor checks validate this quadratic derivative, not a nonlinear adjoint or Hessian.",
+    "No optimal-control solver or complete MPC controller is implemented."
+  ]
+}
